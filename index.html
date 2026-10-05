@@ -41,8 +41,9 @@ a{color:var(--accent)}
 .hero h1{font-size:clamp(2.3rem,5.6vw,3.7rem);line-height:1.04;letter-spacing:-.02em;margin:14px 0 18px;font-weight:800}
 .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--violet),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:1.15rem;color:#d9dcf2;max-width:34em;margin:0}
-.who{margin-top:22px;font-size:.95rem;color:#b9bfe6}
-.who b{color:#fff}
+.who{margin-top:24px;font-size:.95rem;color:#b9bfe6;display:flex;align-items:center;gap:14px}
+.who b{color:#fff;display:block;font-size:1.02rem}
+.avatar{width:64px;height:64px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.55);box-shadow:0 6px 18px rgba(0,0,0,.35);flex:none}
 .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
 .btn{display:inline-block;font:600 .92rem var(--sans);padding:11px 18px;border-radius:8px;text-decoration:none;border:1px solid transparent}
 .btn.p{background:#fff;color:var(--ink)}
@@ -88,6 +89,14 @@ h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.015em;margin:8px 0 10px;lin
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag{color:var(--amber)}}
 .tool h3{margin:0;font-size:1.02rem}
 .tool p{margin:0;font-size:.9rem;color:var(--muted);flex:1}
+.tool.live{text-decoration:none;color:inherit;border-color:var(--accent);transition:transform .15s,box-shadow .15s}
+.tool.live:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(20,10,46,.12)}
+.tag.ok{background:rgba(0,184,169,.16);color:#0b6b62}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .tag.ok{color:var(--mint)}}
+.thumb{width:100%;height:150px;object-fit:cover;object-position:top;border-radius:8px;border:1px solid var(--line)}
+.more{font-weight:600;font-size:.88rem;color:var(--accent)}
+.topic{font:500 .72rem var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.allres{margin:16px 0 0;font-weight:600}.allres a{text-decoration:none}
 .lic{font-size:.82rem;color:var(--muted);margin-top:14px}
 .together{background:linear-gradient(120deg,var(--ink),var(--ink2) 60%,var(--blue));color:#fff;border-radius:16px;padding:32px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:28px;align-items:center}
 .together h2{color:#fff}
@@ -129,7 +138,7 @@ footer a:hover{color:var(--accent)}
         <div class="eyebrow">Delivery Management · <span class="es">Infraestructura crítica · IA aplicada</span><span class="en">Critical infrastructure · Applied AI</span></div>
         <h1><span class="es">Proyectos tecnológicos <em>predecibles</em>, no improvisados.</span><span class="en">Technology projects that are <em>predictable</em>, not improvised.</span></h1>
         <p class="lead"><span class="es">Comparto prácticas reales de gestión de proyectos, infraestructura y continuidad operativa, e IA aplicada a la entrega. Para Project Managers, Delivery Managers y equipos de TI.</span><span class="en">I share real-world practices on project delivery, infrastructure and business continuity, and AI applied to delivery. For Project Managers, Delivery Managers and IT teams.</span></p>
-        <p class="who"><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager · <span class="es">Ciudad de México</span><span class="en">Mexico City</span></p>
+        <div class="who"><img class="avatar" src="foto-carlos.jpg" alt="Carlos Alberto Ruiz Brito" width="64" height="64"><div><b>Carlos Alberto Ruiz Brito</b><span>Senior Delivery Manager · <span class="es">Ciudad de México</span><span class="en">Mexico City</span></span></div></div>
         <div class="ctas">
           <a class="btn p" href="cv.html"><span class="es">Conoce mi trayectoria</span><span class="en">View my résumé</span></a>
           <a class="btn g" href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Sígueme en LinkedIn</span><span class="en">Follow me on LinkedIn</span></a>
@@ -215,11 +224,10 @@ footer a:hover{color:var(--accent)}
     <div class="eyebrow"><span class="es">Recursos gratuitos</span><span class="en">Free resources</span></div>
     <h2><span class="es">Plantillas listas para usar en tu proyecto.</span><span class="en">Templates ready to use in your project.</span></h2>
     <p class="intro"><span class="es">Hechas desde cero, con datos de ejemplo. Descárgalas, adáptalas y compártelas.</span><span class="en">Built from scratch, with sample data. Download, adapt and share them.</span></p>
-    <div class="tools">
-      <div class="tool"><span class="tag"><span class="es">Próximamente</span><span class="en">Coming soon</span></span><h3 class="es">Tablero semanal de Delivery</h3><h3 class="en">Weekly delivery dashboard</h3><p class="es">Presupuesto, desviación, aceptación del cliente y riesgos en una sola página.</p><p class="en">Budget, deviation, client acceptance and risks on a single page.</p></div>
-      <div class="tool"><span class="tag"><span class="es">Próximamente</span><span class="en">Coming soon</span></span><h3 class="es">Registro de riesgos</h3><h3 class="en">Risk register</h3><p class="es">Con los 4 campos que hacen que un riesgo esté gestionado y no solo anotado.</p><p class="en">With the 4 fields that make a risk managed, not just listed.</p></div>
-      <div class="tool"><span class="tag"><span class="es">Próximamente</span><span class="en">Coming soon</span></span><h3 class="es">Checklist de cambio en sistemas 24x7</h3><h3 class="en">24x7 change checklist</h3><p class="es">Lo que se define antes de la ventana: reversa, criterios y comunicación.</p><p class="en">What gets defined before the window: rollback, criteria and communication.</p></div>
+    <div class="tools" id="vitrina">
+      <a class="tool live" href="recursos/tablero-ejecutivo.html"><span class="tag ok">Disponible · Excel</span><h3>Tablero Ejecutivo de Delivery</h3><p>Avance, SPI, CPI, aceptación del cliente y riesgos en una página.</p></a>
     </div>
+    <p class="allres"><a href="recursos/" id="verTodos"><span class="es">Ver todos los recursos</span><span class="en">See all resources</span> <span id="nRec"></span> →</a></p>
     <p class="lic"><span class="es">Los recursos se publican con licencia CC BY 4.0: puedes usarlos y adaptarlos citando a Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span><span class="en">Resources are published under CC BY 4.0: use and adapt them with credit to Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span></p>
   </section>
 
@@ -267,6 +275,16 @@ footer a:hover{color:var(--accent)}
   var s=null;try{s=localStorage.getItem('crb-lang')}catch(e){}
   if(s==='en'||s==='es')set(s);
   b.addEventListener('click',function(){set(document.documentElement.lang==='es'?'en':'es')});
+})();
+</script>
+<script src="recursos/recursos.js"></script>
+<script>
+(function(){
+  if(!window.RECURSOS)return;
+  var l=window.RECURSOS.slice().sort(window.ordenRecursos).slice(0,3);
+  window.renderRecursos(l,document.getElementById('vitrina'),'recursos/');
+  var n=window.RECURSOS.filter(function(r){return r.estado==='disponible'}).length;
+  document.getElementById('nRec').textContent='('+window.RECURSOS.length+')';
 })();
 </script>
 </body>
