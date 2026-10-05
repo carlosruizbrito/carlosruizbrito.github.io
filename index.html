@@ -44,7 +44,14 @@ a{color:var(--accent)}
 .btn.g{border-color:rgba(255,255,255,.35);color:#fff}
 .btn.d{background:var(--ink);color:#fff}
 .btn.o{border-color:var(--ink);color:var(--ink)}
-.cvctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.navlinks a.navcv{display:inline-block!important;background:#fff;color:var(--ink);font-weight:700}
+.navlinks a.navcv:hover{background:#e9e4ff}
+.cvband{margin-top:32px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:24px;align-items:center;padding:28px 30px;border-radius:16px;color:#fff;background:radial-gradient(600px 300px at 100% 0%,rgba(0,119,181,.5),transparent 60%),linear-gradient(110deg,var(--ink),var(--ink2) 60%,var(--blue))}
+.sec .cvband .eyebrow{color:var(--mint)}
+.cvband h3{margin:6px 0 6px;font-size:1.45rem;letter-spacing:-.01em;line-height:1.2}
+.cvband p{margin:0;color:#d9dcf2;max-width:36em}
+.cvband .ctas{margin-top:0;justify-content:flex-end}
+@media (max-width:900px){.cvband{grid-template-columns:minmax(0,1fr);padding:22px}.cvband .ctas{justify-content:flex-start}}
 .panel svg{width:100%;height:auto;display:block}
 .kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
 .kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
@@ -105,7 +112,7 @@ footer a:hover{color:var(--accent)}
         <a href="#comparto"><span class="es">Lo que comparto</span><span class="en">What I share</span></a>
         <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
         <a href="#recursos"><span class="es">Recursos</span><span class="en">Resources</span></a>
-        <a href="cv.html">CV</a>
+        <a class="navcv" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
         <button type="button" class="lang" id="lang" aria-label="Cambiar idioma / Switch language">EN</button>
       </div>
     </div>
@@ -116,7 +123,7 @@ footer a:hover{color:var(--accent)}
         <p class="lead"><span class="es">Comparto prácticas reales de gestión de proyectos, infraestructura y continuidad operativa, e IA aplicada a la entrega. Para Project Managers, Delivery Managers y equipos de TI.</span><span class="en">I share real-world practices on project delivery, infrastructure and business continuity, and AI applied to delivery. For Project Managers, Delivery Managers and IT teams.</span></p>
         <p class="who"><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager · <span class="es">Ciudad de México</span><span class="en">Mexico City</span></p>
         <div class="ctas">
-          <a class="btn p" href="#recursos"><span class="es">Ver recursos gratuitos</span><span class="en">Free resources</span></a>
+          <a class="btn p" href="cv.html"><span class="es">Conoce mi trayectoria</span><span class="en">View my résumé</span></a>
           <a class="btn g" href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Sígueme en LinkedIn</span><span class="en">Follow me on LinkedIn</span></a>
         </div>
       </div>
@@ -182,10 +189,17 @@ footer a:hover{color:var(--accent)}
       <div class="win"><b>−20%</b><span class="es">en tiempos de entrega regionales con adopción ágil.</span><span class="en">in regional delivery times through Agile adoption.</span></div>
       <div class="win"><b>10,000+</b><span class="es">usuarios bajo un modelo de SAP Security multipaís.</span><span class="en">users under a multi-country SAP Security model.</span></div>
     </div>
-    <div class="cvctas">
-      <a class="btn d" href="cv.html"><span class="es">Ver trayectoria completa</span><span class="en">View full résumé</span></a>
-      <a class="btn o es" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Descargar CV (PDF)</a>
-      <a class="btn o en" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Download CV (PDF)</a>
+    <div class="cvband">
+      <div>
+        <div class="eyebrow"><span class="es">Trayectoria completa</span><span class="en">Full résumé</span></div>
+        <h3><span class="es">15 años en tecnología: infraestructura crítica, transformación digital y continuidad operativa.</span><span class="en">15 years in technology: critical infrastructure, digital transformation and business continuity.</span></h3>
+        <p><span class="es">Experiencia, certificaciones y logros en una sola página, también disponible en PDF.</span><span class="en">Experience, certifications and results on one page, also available as a PDF.</span></p>
+      </div>
+      <div class="ctas">
+        <a class="btn p" href="cv.html"><span class="es">Ver CV en línea</span><span class="en">View online</span></a>
+        <a class="btn g es" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Descargar PDF</a>
+        <a class="btn g en" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Download PDF</a>
+      </div>
     </div>
   </section>
 
