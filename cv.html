@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CV · Carlos Ruiz Brito</title>
 <meta name="description" content="CV de Carlos Alberto Ruiz Brito · Senior Delivery Manager">
@@ -142,13 +144,6 @@ footer{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-si
     <footer>Document prepared by Carlos Alberto Ruiz Brito · 10/05/2026</footer>
   </main>
 </div>
-<script>
-(function(){
-  function setLang(l){document.querySelectorAll('[data-lang]').forEach(function(d){d.hidden=d.getAttribute('data-lang')!==l});document.documentElement.lang=l;try{localStorage.setItem('crb-lang',l)}catch(e){}}
-  var s=null;try{s=localStorage.getItem('crb-lang')}catch(e){} if(s==='en'||s==='es')setLang(s);
-  document.querySelectorAll('.lang-toggle').forEach(function(b){b.addEventListener('click',function(){setLang(b.getAttribute('data-to'))})});
-  document.querySelectorAll('.copy-mail').forEach(function(btn){btn.addEventListener('click',function(){var m=btn.querySelector('.mail'),msg=btn.closest('.ct').querySelector('.copy-msg'),ok=btn.getAttribute('data-ok');function sel(){try{var r=document.createRange();r.selectNodeContents(m);var g=getSelection();g.removeAllRanges();g.addRange(r)}catch(e){}}try{navigator.clipboard.writeText(m.textContent).then(function(){msg.textContent=ok},sel)}catch(e){sel()}})});
-})();
-</script>
+<script src="js/cv.js" defer></script>
 </body>
 </html>

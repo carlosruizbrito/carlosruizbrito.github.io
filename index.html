@@ -2,6 +2,8 @@
 <html lang="es">
 <head>
 <meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Delivery con Charly Brito · Carlos Alberto Ruiz Brito</title>
 <meta name="description" content="Delivery con Charly Brito: prácticas de Delivery Management, infraestructura crítica e IA aplicada, por Carlos Alberto Ruiz Brito.">
@@ -113,6 +115,35 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 footer a{color:var(--muted)}
 footer a:hover{color:var(--accent)}
 .legal{width:100%;font-size:.78rem}
+.sub{font-size:1.05rem;margin:30px 0 12px}
+.collab{margin-top:18px;font-size:.92rem;color:var(--muted)}
+details.older{margin:0;padding:0 0 6px 24px;position:relative}
+details.older summary{cursor:pointer;font-weight:600;font-size:.9rem;color:var(--accent);list-style:none;padding:2px 0 14px}
+details.older summary::-webkit-details-marker{display:none}
+details.older summary::before{content:"+ "}
+details.older[open] summary::before{content:"– "}
+details.older article{padding-left:0}
+details.older article::before{left:-32px}
+.mnav{display:none}
+@media (max-width:900px){
+ .panel{display:none}
+ .herogrid{padding-block:28px 56px}
+ .hero h1{font-size:2.1rem}
+ .lead{font-size:1rem}
+ .mnav{display:flex;gap:8px;position:sticky;top:0;z-index:20;overflow-x:auto;padding:10px 16px;background:rgba(20,10,46,.94);backdrop-filter:blur(8px);scrollbar-width:none}
+ .mnav::-webkit-scrollbar{display:none}
+ .mnav a{flex:none;font:600 .85rem var(--sans);color:#e6e3ff;text-decoration:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22)}
+ .mnav a.cvb{background:#fff;color:var(--ink);border-color:#fff}
+ section{padding-block:36px 4px;scroll-margin-top:58px}
+ .kpis{gap:8px;margin-top:-28px}
+ .kpi{padding:12px}.kpi b{font-size:1.45rem}.kpi span{font-size:.76rem}
+ .intro{margin-bottom:16px;font-size:.95rem}
+ .hs{display:grid!important;grid-auto-flow:column;grid-auto-columns:82%;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:10px;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px;scrollbar-width:thin}
+ .hs>*{scroll-snap-align:start}
+ .hs+.swipe,.swipe{display:block}
+ .cvband h3{font-size:1.15rem}
+ footer{margin-top:40px}
+}
 @media (max-width:900px){.herogrid,.together{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis .kpi:first-child{grid-column:1/-1}.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.tools,.posts,.wins{grid-template-columns:minmax(0,1fr)}.navlinks a{display:none}}
 @media (max-width:480px){.pillars{grid-template-columns:minmax(0,1fr)}}
 </style>
@@ -126,8 +157,8 @@ footer a:hover{color:var(--accent)}
     <div class="nav">
       <a class="brand" href="#top">Delivery con <span>Charly Brito</span></a>
       <div class="navlinks">
-        <a href="#comparto"><span class="es">Lo que comparto</span><span class="en">What I share</span></a>
         <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
+        <a href="#linkedin">LinkedIn</a>
         <a href="#recursos"><span class="es">Recursos</span><span class="en">Resources</span></a>
         <a class="navcv" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
         <button type="button" class="lang" id="lang" aria-label="Cambiar idioma / Switch language">EN</button>
@@ -168,6 +199,7 @@ footer a:hover{color:var(--accent)}
     </div>
   </div>
 </header>
+<nav class="mnav" aria-label="Secciones"><a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="#linkedin">LinkedIn</a><a href="#recursos"><span class="es">Recursos</span><span class="en">Resources</span></a><a href="cv.html" class="cvb">CV</a></nav>
 
 <main class="wrap">
   <div class="kpis">
@@ -178,18 +210,6 @@ footer a:hover{color:var(--accent)}
     <div class="kpi"><b>5,600+</b><span class="es">seguidores en LinkedIn</span><span class="en">LinkedIn followers</span></div>
   </div>
 
-  <section class="sec" id="comparto">
-    <div class="eyebrow"><span class="es">Lo que comparto</span><span class="en">What I share</span></div>
-    <h2><span class="es">Cuatro temas, una misma idea: claridad para decidir.</span><span class="en">Four topics, one idea: clarity to decide.</span></h2>
-    <p class="intro"><span class="es">La mayoría de los proyectos no fallan por la tecnología. Fallan por riesgos que nadie vio a tiempo, dependencias sin dueño y reportes que no ayudan a decidir. De eso escribo.</span><span class="en">Most projects don't fail because of technology. They fail because of risks nobody saw in time, dependencies without an owner and reports that don't help anyone decide. That's what I write about.</span></p>
-    <div class="pillars">
-      <div class="pill" style="--c:#6A0DAD"><div class="n">01</div><h3>Delivery Management</h3><p class="es">Gobierno de entrega, métricas, documentos clave y reportes ejecutivos.</p><p class="en">Delivery governance, metrics, key artifacts and executive reporting.</p></div>
-      <div class="pill" style="--c:#0077B5"><div class="n">02</div><h3 class="es">Infraestructura y continuidad</h3><h3 class="en">Infrastructure &amp; continuity</h3><p class="es">Migraciones, centros de datos, Disaster Recovery y cambios en sistemas 24x7.</p><p class="en">Migrations, data centers, Disaster Recovery and changes to 24x7 systems.</p></div>
-      <div class="pill" style="--c:#00B8A9"><div class="n">03</div><h3 class="es">IA aplicada a la entrega</h3><h3 class="en">AI applied to delivery</h3><p class="es">Reportes, QA y documentación con IA. La IA propone; la persona valida y decide.</p><p class="en">Reporting, QA and documentation with AI. AI proposes; people validate and decide.</p></div>
-      <div class="pill" style="--c:#f0b429"><div class="n">04</div><h3 class="es">Liderazgo</h3><h3 class="en">Leadership</h3><p class="es">Equipos multipaís, comunicación con dirección y escalación con criterio.</p><p class="en">Multi-country teams, executive communication and escalation with judgment.</p></div>
-    </div>
-  </section>
-
   <section class="sec" id="trayectoria">
     <div class="eyebrow"><span class="es">Trayectoria</span><span class="en">Career</span></div>
     <h2><span class="es">De analista de sistemas a Senior Delivery Manager.</span><span class="en">From systems analyst to Senior Delivery Manager.</span></h2>
@@ -198,10 +218,12 @@ footer a:hover{color:var(--accent)}
       <article><div class="d">2025 – <span class="es">hoy</span><span class="en">today</span></div><h3>Senior Delivery Manager</h3><p class="es">Portafolio de infraestructura crítica y continuidad operativa (DR) en operación 24x7.</p><p class="en">Critical infrastructure and business continuity (DR) portfolio in 24x7 operations.</p></article>
       <article><div class="d">2020 – 2025</div><h3>Project Manager SR · Globant</h3><p class="es">Programas de transformación digital y Salesforce para banca, retail, farma y educación en LATAM.</p><p class="en">Digital transformation and Salesforce programs for banking, retail, pharma and education across LATAM.</p></article>
       <article><div class="d">2018 – 2020</div><h3>Project Manager</h3><p class="es">SAP Security multipaís y proyectos regulatorios en banca.</p><p class="en">Multi-country SAP Security and regulatory banking projects.</p></article>
+      <details class="older"><summary><span class="es">Ver trayectoria 2012 – 2018</span><span class="en">Show 2012 – 2018</span></summary>
       <article><div class="d">2015 – 2018</div><h3 class="es">Analista de Sistemas SR → Project Manager</h3><h3 class="en">Senior Systems Analyst → Project Manager</h3><p class="es">Ventas multicanal y analítica comercial en banca.</p><p class="en">Multichannel sales and commercial analytics in banking.</p></article>
       <article><div class="d">2012 – 2014</div><h3 class="es">Analista de sistemas y desarrollador</h3><h3 class="en">Systems analyst &amp; developer</h3><p class="es">Modelado de procesos y aplicaciones de automatización.</p><p class="en">Process modeling and automation applications.</p></article>
+      </details>
     </div>
-    <div class="wins">
+    <div class="wins hs">
       <div class="win"><b>+25% NPS</b><span class="es">en la modernización de una super app bancaria.</span><span class="en">in the modernization of a banking super app.</span></div>
       <div class="win"><b>−20%</b><span class="es">en tiempos de entrega regionales con adopción ágil.</span><span class="en">in regional delivery times through Agile adoption.</span></div>
       <div class="win"><b>10,000+</b><span class="es">usuarios bajo un modelo de SAP Security multipaís.</span><span class="en">users under a multi-country SAP Security model.</span></div>
@@ -220,40 +242,35 @@ footer a:hover{color:var(--accent)}
     </div>
   </section>
 
-  <section class="sec" id="recursos">
-    <div class="eyebrow"><span class="es">Recursos gratuitos</span><span class="en">Free resources</span></div>
-    <h2><span class="es">Plantillas listas para usar en tu proyecto.</span><span class="en">Templates ready to use in your project.</span></h2>
-    <p class="intro"><span class="es">Hechas desde cero, con datos de ejemplo. Descárgalas, adáptalas y compártelas.</span><span class="en">Built from scratch, with sample data. Download, adapt and share them.</span></p>
-    <div class="tools" id="vitrina">
-      <a class="tool live" href="recursos/tablero-ejecutivo.html"><span class="tag ok">Disponible · Excel</span><h3>Tablero Ejecutivo de Delivery</h3><p>Avance, SPI, CPI, aceptación del cliente y riesgos en una página.</p></a>
+  <section class="sec" id="linkedin">
+    <div class="eyebrow"><span class="es">En LinkedIn · #DeliveryConCharlyBrito</span><span class="en">On LinkedIn · #DeliveryConCharlyBrito</span></div>
+    <h2><span class="es">Cuatro temas, una misma idea: claridad para decidir.</span><span class="en">Four topics, one idea: clarity to decide.</span></h2>
+    <p class="intro"><span class="es">La mayoría de los proyectos no fallan por la tecnología. Fallan por riesgos que nadie vio a tiempo, dependencias sin dueño y reportes que no ayudan a decidir. De eso escribo.</span><span class="en">Most projects don't fail because of technology. They fail because of risks nobody saw in time, dependencies without an owner and reports that don't help anyone decide. That's what I write about.</span></p>
+    <div class="pillars hs">
+      <div class="pill" style="--c:#6A0DAD"><div class="n">01</div><h3>Delivery Management</h3><p class="es">Gobierno de entrega, métricas, documentos clave y reportes ejecutivos.</p><p class="en">Delivery governance, metrics, key artifacts and executive reporting.</p></div>
+      <div class="pill" style="--c:#0077B5"><div class="n">02</div><h3 class="es">Infraestructura y continuidad</h3><h3 class="en">Infrastructure &amp; continuity</h3><p class="es">Migraciones, centros de datos, Disaster Recovery y cambios en sistemas 24x7.</p><p class="en">Migrations, data centers, Disaster Recovery and changes to 24x7 systems.</p></div>
+      <div class="pill" style="--c:#00B8A9"><div class="n">03</div><h3 class="es">IA aplicada a la entrega</h3><h3 class="en">AI applied to delivery</h3><p class="es">Reportes, QA y documentación con IA. La IA propone; la persona valida y decide.</p><p class="en">Reporting, QA and documentation with AI. AI proposes; people validate and decide.</p></div>
+      <div class="pill" style="--c:#f0b429"><div class="n">04</div><h3 class="es">Liderazgo</h3><h3 class="en">Leadership</h3><p class="es">Equipos multipaís, comunicación con dirección y escalación con criterio.</p><p class="en">Multi-country teams, executive communication and escalation with judgment.</p></div>
     </div>
-    <p class="allres"><a href="recursos/" id="verTodos"><span class="es">Ver todos los recursos</span><span class="en">See all resources</span> <span id="nRec"></span> →</a></p>
-    <p class="lic"><span class="es">Los recursos se publican con licencia CC BY 4.0: puedes usarlos y adaptarlos citando a Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span><span class="en">Resources are published under CC BY 4.0: use and adapt them with credit to Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span></p>
-  </section>
-
-  <section class="sec">
-    <div class="together">
-      <div>
-        <div class="eyebrow" style="color:var(--mint)"><span class="es">Construyamos juntos</span><span class="en">Let's build together</span></div>
-        <h2><span class="es">Los mejores recursos salen de problemas reales.</span><span class="en">The best resources come from real problems.</span></h2>
-        <p><span class="es">Si hay un tema que te gustaría ver resuelto, o mejoraste una de las plantillas, cuéntamelo.</span><span class="en">If there's a topic you'd like to see covered, or you improved one of the templates, tell me.</span></p>
-      </div>
-      <ul>
-        <li><span class="es">Propón un tema para la próxima serie.</span><span class="en">Suggest a topic for the next series.</span></li>
-        <li><span class="es">Comparte cómo adaptaste un recurso.</span><span class="en">Share how you adapted a resource.</span></li>
-        <li><a href="mailto:carlos@carlosruizbrito.com?subject=Delivery%20con%20Charly%20Brito" style="color:#fff">carlos@carlosruizbrito.com</a></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="eyebrow"><span class="es">En LinkedIn</span><span class="en">On LinkedIn</span></div>
-    <h2><span class="es">Ideas recientes de #DeliveryConCharlyBrito</span><span class="en">Recent ideas from #DeliveryConCharlyBrito</span></h2>
-    <div class="posts">
+    <h3 class="sub"><span class="es">Publicaciones recientes</span><span class="en">Recent posts</span></h3>
+    <div class="posts hs">
       <a class="post" href="https://www.linkedin.com/posts/carlosruizb_projectmanagement-deliverymanagement-pmo-share-7437992710130569216-63l3" target="_blank" rel="noopener"><q class="es">6 documentos que no pueden faltar en un proyecto.</q><q class="en">6 documents every project needs.</q><span class="es">Más de 39,000 impresiones · Leer en LinkedIn →</span><span class="en">39,000+ impressions · Read on LinkedIn →</span></a>
       <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">El % de avance no dice si vas bien.</q><q class="en">Percent complete doesn't tell you if you're on track.</q><span class="es">Serie: el tablero semanal de un Delivery Manager →</span><span class="en">Series: a Delivery Manager's weekly dashboard →</span></a>
       <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">Un riesgo sin dueño es un problema con fecha.</q><q class="en">A risk without an owner is a problem with a due date.</q><span class="es">Ver todas las publicaciones →</span><span class="en">See all posts →</span></a>
     </div>
+    <p class="allres"><a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Seguir en LinkedIn</span><span class="en">Follow on LinkedIn</span> →</a></p>
+  </section>
+
+  <section class="sec" id="recursos">
+    <div class="eyebrow"><span class="es">Recursos gratuitos</span><span class="en">Free resources</span></div>
+    <h2><span class="es">Plantillas listas para usar en tu proyecto.</span><span class="en">Templates ready to use in your project.</span></h2>
+    <p class="intro"><span class="es">Hechas desde cero, con datos de ejemplo. Descárgalas, adáptalas y compártelas.</span><span class="en">Built from scratch, with sample data. Download, adapt and share them.</span></p>
+    <div class="tools hs" id="vitrina">
+      <a class="tool live" href="recursos/tablero-ejecutivo.html"><span class="tag ok">Disponible · Excel</span><h3>Tablero Ejecutivo de Delivery</h3><p>Avance, SPI, CPI, aceptación del cliente y riesgos en una página.</p></a>
+    </div>
+    <p class="allres"><a href="recursos/" id="verTodos"><span class="es">Ver todos los recursos</span><span class="en">See all resources</span> <span id="nRec"></span> →</a></p>
+    <p class="lic"><span class="es">Los recursos se publican con licencia CC BY 4.0: puedes usarlos y adaptarlos citando a Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span><span class="en">Resources are published under CC BY 4.0: use and adapt them with credit to Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span></p>
+    <p class="collab"><span class="es">¿Un tema que te gustaría ver resuelto o adaptaste una plantilla? Cuéntamelo:</span><span class="en">A topic you'd like covered, or adapted a template? Tell me:</span> <a href="mailto:carlos@carlosruizbrito.com?subject=Delivery%20con%20Charly%20Brito">carlos@carlosruizbrito.com</a></p>
   </section>
 </main>
 
@@ -265,27 +282,10 @@ footer a:hover{color:var(--accent)}
       <a href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a>
       <a href="cv.html"><span class="es">Trayectoria completa</span><span class="en">Full résumé</span></a>
     </nav>
-    <span class="legal"><span class="es">© Carlos Alberto Ruiz Brito · 04/10/2026 · Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© Carlos Alberto Ruiz Brito · 10/04/2026 · Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
+    <span class="legal"><span class="es">© Carlos Alberto Ruiz Brito · 05/10/2026 · Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© Carlos Alberto Ruiz Brito · 10/05/2026 · Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
   </div>
 </footer>
-<script>
-(function(){
-  var b=document.getElementById('lang');
-  function set(l){document.documentElement.lang=l;b.textContent=l==='es'?'EN':'ES';try{localStorage.setItem('crb-lang',l)}catch(e){}}
-  var s=null;try{s=localStorage.getItem('crb-lang')}catch(e){}
-  if(s==='en'||s==='es')set(s);
-  b.addEventListener('click',function(){set(document.documentElement.lang==='es'?'en':'es')});
-})();
-</script>
-<script src="recursos/recursos.js"></script>
-<script>
-(function(){
-  if(!window.RECURSOS)return;
-  var l=window.RECURSOS.slice().sort(window.ordenRecursos).slice(0,3);
-  window.renderRecursos(l,document.getElementById('vitrina'),'recursos/');
-  var n=window.RECURSOS.filter(function(r){return r.estado==='disponible'}).length;
-  document.getElementById('nRec').textContent='('+window.RECURSOS.length+')';
-})();
-</script>
+<script src="recursos/recursos.js" defer></script>
+<script src="js/inicio.js" defer></script>
 </body>
 </html>
