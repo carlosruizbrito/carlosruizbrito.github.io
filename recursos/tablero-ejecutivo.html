@@ -40,6 +40,7 @@ a{color:var(--accent)}
 .navlinks{display:flex;gap:6px;align-items:center}
 .navlinks a{font:500 .86rem var(--sans);color:#d9dcf2;text-decoration:none;padding:6px 10px;border-radius:6px}
 .navlinks a:hover{background:rgba(255,255,255,.08)}
+.navlinks a.home{border:1px solid rgba(255,255,255,.3)}
 .navlinks a.navcv{background:#fff;color:var(--ink);font-weight:700}
 .top{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 64px}
 .hero .eyebrow{color:var(--mint)}
@@ -78,7 +79,9 @@ video{width:100%;display:block;border-radius:12px;border:1px solid var(--line);b
 .dl h3{margin:0;font-size:1.35rem}.dl p{margin:4px 0 0;color:#d9dcf2}
 footer{margin-top:56px;border-top:1px solid var(--line)}
 footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:.86rem;color:var(--muted)}
-@media (max-width:900px){.top,.grid,.q{grid-template-columns:minmax(0,1fr)}.navlinks a.hide{display:none}.shot img{height:240px}}
+@media (max-width:480px){.brand{font-size:.9rem}.navlinks{gap:4px}.navlinks a{padding:6px 8px;font-size:.8rem}}
+.navlinks a{white-space:nowrap}
+@media (max-width:900px){.top,.grid,.q{grid-template-columns:minmax(0,1fr)}.shot img{height:240px}}
 </style>
 </head>
 <body>
@@ -87,7 +90,8 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
     <div class="nav">
       <a class="brand" href="../index.html">Delivery con <span>Charly Brito</span></a>
       <div class="navlinks">
-        <a class="hide" href="./">Todos los recursos</a>
+        <a class="home" href="../index.html">← Inicio</a>
+        <a href="./">Recursos</a>
         <a class="navcv" href="../cv.html">Ver CV</a>
       </div>
     </div>
@@ -99,7 +103,7 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
         <div class="meta"><span>Excel · 6 hojas</span><span>Valor ganado (SPI · CPI)</span><span>100% configurable</span><span>CC BY 4.0</span></div>
         <div class="ctas">
           <a class="btn p" href="Tablero_Ejecutivo_Delivery_v1.0.xlsx" download>Descargar plantilla</a>
-          <a class="btn g" href="#video">Ver cómo usarla (49 s)</a>
+          <a class="btn g" href="#video">Ver cómo usarla (1 min)</a>
         </div>
       </div>
       <div class="shot"><img src="tablero-vista-previa.jpg" alt="Vista previa del tablero: indicadores, curva S, costo acumulado, aceptación y mapa de calor de riesgos"></div>
