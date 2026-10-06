@@ -71,16 +71,17 @@ footer{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-si
 .topnav{position:sticky;top:0;z-index:30;display:flex;align-items:center;gap:6px;padding:10px 18px;background:#140a2e;font-family:Inter,system-ui,sans-serif}
 .topnav a{color:#e6e3ff;text-decoration:none;font-size:.85rem;font-weight:600;padding:6px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.22)}
 .topnav a.tb{border:0;color:#fff;font-weight:800;padding-left:0}.topnav a.tb span{color:#c9a2ff}
+html[lang="en"] .topnav .es,html:not([lang="en"]) .topnav .en{display:none}
 .topnav .sp{flex:1}.topnav a{white-space:nowrap}
 @media print{.topnav{display:none}}
-@media (max-width:480px){.topnav a.tb{font-size:.8rem}.topnav a{font-size:.78rem;padding:5px 8px}}
+@media (max-width:480px){.topnav{padding:8px 12px;gap:4px}.topnav a.tb{font-size:.74rem;line-height:1.15}.topnav a{font-size:.76rem;padding:5px 7px}}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
-<nav class="topnav" aria-label="Navegación"><a class="tb" href="index.html">Delivery con <span>Charly Brito</span></a><span class="sp"></span><a href="index.html">← Inicio</a><a href="recursos/">Recursos</a></nav>
+<nav class="topnav" aria-label="Navegación"><a class="tb" href="index.html">Delivery con <span>Charly Brito</span></a><span class="sp"></span><a href="index.html"><span class="es">← Inicio</span><span class="en">← Home</span></a><a href="recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a></nav>
 
 <div class="cv" data-lang="es">
 <aside class="side">
@@ -103,7 +104,6 @@ footer{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-si
   </aside>
 <main class="body">
     <div class="bar">
-      <a class="btn ghost" href="index.html">← Inicio</a>
       <span class="sp"></span>
       <button type="button" class="btn ghost lang-toggle" data-to="en">EN</button>
       <a class="btn" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Descargar CV español (PDF)</a><a class="btn" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Descargar CV inglés (PDF)</a>
@@ -138,7 +138,6 @@ footer{margin-top:28px;padding-top:12px;border-top:1px solid var(--line);font-si
   </aside>
 <main class="body">
     <div class="bar">
-      <a class="btn ghost" href="index.html">← Home</a>
       <span class="sp"></span>
       <button type="button" class="btn ghost lang-toggle" data-to="es">ES</button>
       <a class="btn" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Download Spanish CV (PDF)</a><a class="btn" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Download English CV (PDF)</a>
