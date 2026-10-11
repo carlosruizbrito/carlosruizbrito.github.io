@@ -30,8 +30,8 @@ window.RECURSOS = [
     img: "tablero-vista-previa.jpg",
     titulo: { es: "Tablero Ejecutivo de Delivery", en: "Executive Delivery Dashboard" },
     desc: {
-      es: "Avance, SPI, CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso.",
-      en: "Progress, SPI, CPI, client acceptance and risks on one page, with automatic status and a how-to video (Spanish)."
+      es: "Avance, SPI, SPI(t), CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso.",
+      en: "Progress, SPI, SPI(t), CPI, client acceptance and risks on one page, with automatic status and a how-to video (Spanish)."
     }
   },
   {
