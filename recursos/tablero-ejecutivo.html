@@ -6,13 +6,13 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tablero Ejecutivo de Delivery · Plantilla gratuita · Delivery con Charly Brito</title>
-<meta name="description" content="Plantilla gratuita en Excel: avance, SPI, CPI, aceptación del cliente y riesgos en una página, con semáforo automático. Por Carlos Alberto Ruiz Brito.">
+<meta name="description" content="Plantilla gratuita en Excel (español e inglés): avance, SPI, CPI, aceptación del cliente y riesgos en una página, con semáforo automático. Free Excel template in English and Spanish. Por Carlos Alberto Ruiz Brito.">
 <meta name="author" content="Carlos Alberto Ruiz Brito">
 <link rel="canonical" href="https://carlosruizbrito.com/recursos/tablero-ejecutivo.html">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://carlosruizbrito.com/recursos/tablero-ejecutivo.html">
 <meta property="og:title" content="Tablero Ejecutivo de Delivery · plantilla gratuita">
-<meta property="og:description" content="Avance, SPI, CPI, aceptación y riesgos en una página. Excel configurable, con video de uso.">
+<meta property="og:description" content="Avance, SPI, CPI, aceptación y riesgos en una página. Excel configurable en español e inglés, con video de uso.">
 <meta property="og:image" content="https://carlosruizbrito.com/recursos/tablero-og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="627">
@@ -27,7 +27,7 @@
 --bg:#f6f5fb;--surface:#ffffff;--fg:#17142b;--muted:#5d5873;--line:#e2deef;--accent:#6A0DAD;
 --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0a1f;--surface:#171230;--fg:#ecebf6;--muted:#a8a3c2;--line:#2b2550;--accent:#c9a2ff;color-scheme:dark}}
-*{box-sizing:border-box}
+*{box-sizing:border-box}html[lang="es"] .en,html[lang="en"] .es{display:none!important}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6}
 a{color:var(--accent)}
 .wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
@@ -38,7 +38,8 @@ a{color:var(--accent)}
 .nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding-block:18px;gap:12px}
 .brand{font-weight:800;color:#fff;text-decoration:none}.brand span{color:var(--violet)}
 .navlinks{display:flex;gap:6px;align-items:center}
-.navlinks a{font:500 .86rem var(--sans);color:#d9dcf2;text-decoration:none;padding:6px 10px;border-radius:6px}
+.navlinks a,.lang{font:500 .86rem var(--sans);color:#d9dcf2;text-decoration:none;padding:6px 10px;border-radius:6px}
+.lang{border:1px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;font-family:var(--mono)}
 .navlinks a:hover{background:rgba(255,255,255,.08)}
 .navlinks a.home{border:1px solid rgba(255,255,255,.3)}
 .navlinks a.navcv{background:#fff;color:var(--ink);font-weight:700}
@@ -79,9 +80,10 @@ video{width:100%;display:block;border-radius:12px;border:1px solid var(--line);b
 .dl h3{margin:0;font-size:1.35rem}.dl p{margin:4px 0 0;color:#d9dcf2}
 footer{margin-top:56px;border-top:1px solid var(--line)}
 footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;font-size:.86rem;color:var(--muted)}
-@media (max-width:480px){.brand{font-size:.9rem}.navlinks{gap:4px}.navlinks a{padding:6px 8px;font-size:.8rem}}
+@media (max-width:480px){.brand{font-size:.9rem}.navlinks{gap:4px}.navlinks a,.lang{padding:6px 8px;font-size:.8rem}.navlinks a.rec{display:none}}
 .navlinks a{white-space:nowrap}
 @media (max-width:900px){.top,.grid,.q{grid-template-columns:minmax(0,1fr)}.shot img{height:240px}}
+.langnote{font-size:.82rem;color:var(--muted);margin:10px 0 0}
 </style>
 </head>
 <body>
@@ -90,93 +92,103 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
     <div class="nav">
       <a class="brand" href="../index.html">Delivery con <span>Charly Brito</span></a>
       <div class="navlinks">
-        <a class="home" href="../index.html">← Inicio</a>
-        <a href="./">Recursos</a>
-        <a class="navcv" href="../cv.html">Ver CV</a>
+        <a class="home" href="../index.html"><span class="es">← Inicio</span><span class="en">← Home</span></a>
+        <a class="rec" href="./"><span class="es">Recursos</span><span class="en">Resources</span></a>
+        <a class="navcv" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+        <button type="button" class="lang" id="lang" aria-label="Cambiar idioma / Switch language">EN</button>
       </div>
     </div>
     <div class="top">
       <div>
-        <div class="eyebrow">Recurso gratuito · Plantilla en Excel</div>
-        <h1>Tablero Ejecutivo de <em>Delivery</em></h1>
-        <p class="lead">Cuatro preguntas, una página, cada semana: ¿vamos en fecha?, ¿alcanza el dinero?, ¿el cliente está aceptando lo entregado? y ¿qué riesgos pueden cambiar el resultado?</p>
-        <div class="meta"><span>Excel · 6 hojas</span><span>Valor ganado (SPI · SPI(t) · CPI)</span><span>100% configurable</span><span>CC BY 4.0</span></div>
+        <div class="eyebrow"><span class="es">Recurso gratuito · Plantilla en Excel</span><span class="en">Free resource · Excel template</span></div>
+        <h1 class="es">Tablero Ejecutivo de <em>Delivery</em></h1><h1 class="en">Executive <em>Delivery</em> Dashboard</h1>
+        <p class="lead es">Cuatro preguntas, una página, cada semana: ¿vamos en fecha?, ¿alcanza el dinero?, ¿el cliente está aceptando lo entregado? y ¿qué riesgos pueden cambiar el resultado?</p>
+        <p class="lead en">Four questions, one page, every week: are we on schedule? is the money enough? is the client accepting what we deliver? which risks could change the outcome?</p>
+        <div class="meta"><span><span class="es">Excel · 6 hojas</span><span class="en">Excel · 6 sheets</span></span><span><span class="es">Valor ganado (SPI · SPI(t) · CPI)</span><span class="en">Earned value (SPI · SPI(t) · CPI)</span></span><span><span class="es">100% configurable</span><span class="en">Fully configurable</span></span><span><span class="es">Español · English</span><span class="en">English · Español</span></span><span>CC BY 4.0</span></div>
         <div class="ctas">
-          <a class="btn p" href="Tablero_Ejecutivo_Delivery_v1.1.xlsx" download>Descargar plantilla</a>
-          <a class="btn g" href="#video">Ver cómo usarla (1 min)</a>
+          <a class="btn p es" href="Tablero_Ejecutivo_Delivery_v1.1.xlsx" download>Descargar plantilla</a>
+          <a class="btn p en" href="Executive_Delivery_Dashboard_v1.1.xlsx" download>Download template</a>
+          <a class="btn g" href="#video"><span class="es">Ver cómo usarla (1 min)</span><span class="en">See how to use it (1 min)</span></a>
         </div>
       </div>
-      <div class="shot"><img src="tablero-vista-previa.jpg" alt="Vista previa del tablero: indicadores, curva S, costo acumulado, aceptación y mapa de calor de riesgos"></div>
+      <div class="shot"><img class="es" src="tablero-vista-previa.jpg" alt="Vista previa del tablero: indicadores, curva S, costo acumulado, aceptación y mapa de calor de riesgos"><img class="en" src="tablero-vista-previa-en.jpg" alt="Dashboard preview: indicators, S-curve, cumulative cost, acceptance and risk heat map" loading="lazy"></div>
     </div>
   </div>
 </header>
 
 <main class="wrap">
   <section class="sec" id="video">
-    <div class="eyebrow">Cómo usarla</div>
-    <h2>De cero a tablero en 15 minutos por semana.</h2>
-    <p class="intro">Un recorrido rápido por las seis hojas: qué se configura una sola vez, qué se captura cada viernes y qué se calcula solo.</p>
-    <video controls preload="metadata" playsinline poster="tablero-poster.jpg">
+    <div class="eyebrow"><span class="es">Cómo usarla</span><span class="en">How to use it</span></div>
+    <h2><span class="es">De cero a tablero en 15 minutos por semana.</span><span class="en">From zero to dashboard in 15 minutes a week.</span></h2>
+    <p class="intro"><span class="es">Un recorrido rápido por las seis hojas: qué se configura una sola vez, qué se captura cada viernes y qué se calcula solo.</span><span class="en">A quick tour of the six sheets: what you set up once, what you enter every Friday and what is calculated automatically.</span></p>
+    <video class="es" controls preload="none" playsinline poster="tablero-poster.jpg">
       <source src="tablero-como-usarlo.mp4" type="video/mp4">
       Tu navegador no reproduce video. <a href="tablero-como-usarlo.mp4">Descárgalo aquí</a>.
     </video>
+    <video class="en" controls preload="none" playsinline poster="tablero-poster-en.jpg">
+      <source src="tablero-como-usarlo-en.mp4" type="video/mp4">
+      Your browser can't play this video. <a href="tablero-como-usarlo-en.mp4">Download it here</a>.
+    </video>
+    <p class="langnote en">English subtitles. Slide titles and spreadsheet screens show the Spanish edition, which works exactly the same way.</p>
   </section>
 
   <section class="sec">
-    <div class="eyebrow">Qué responde</div>
-    <h2>Lo que dirección pregunta, antes de que lo pregunte.</h2>
+    <div class="eyebrow"><span class="es">Qué responde</span><span class="en">What it answers</span></div>
+    <h2><span class="es">Lo que dirección pregunta, antes de que lo pregunte.</span><span class="en">What leadership asks, before they ask it.</span></h2>
     <div class="q">
-      <div style="--c:#6A0DAD">¿Vamos en fecha?<small>SPI en valor y SPI(t) en tiempo, con el desfase en semanas.</small></div>
-      <div style="--c:#0077B5">¿Alcanza el dinero?<small>Costo real contra plan y CPI.</small></div>
-      <div style="--c:#00B8A9">¿El cliente acepta?<small>Entregado no es aceptado: días en revisión.</small></div>
-      <div style="--c:#F0B429">¿Qué puede fallar?<small>Mapa de calor y top 5 de riesgos abiertos.</small></div>
+      <div style="--c:#6A0DAD"><span class="es">¿Vamos en fecha?</span><span class="en">Are we on schedule?</span><small><span class="es">SPI en valor y SPI(t) en tiempo, con el desfase en semanas.</span><span class="en">SPI in value and SPI(t) in time, with the gap in weeks.</span></small></div>
+      <div style="--c:#0077B5"><span class="es">¿Alcanza el dinero?</span><span class="en">Is the money enough?</span><small><span class="es">Costo real contra plan y CPI.</span><span class="en">Actual cost vs. plan, and CPI.</span></small></div>
+      <div style="--c:#00B8A9"><span class="es">¿El cliente acepta?</span><span class="en">Is the client accepting?</span><small><span class="es">Entregado no es aceptado: días en revisión.</span><span class="en">Delivered is not accepted: days in review.</span></small></div>
+      <div style="--c:#F0B429"><span class="es">¿Qué puede fallar?</span><span class="en">What could go wrong?</span><small><span class="es">Mapa de calor y top 5 de riesgos abiertos.</span><span class="en">Heat map and top 5 open risks.</span></small></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="eyebrow">Qué incluye</div>
-    <h2>Seis hojas, una sola fuente de verdad.</h2>
+    <div class="eyebrow"><span class="es">Qué incluye</span><span class="en">What's included</span></div>
+    <h2><span class="es">Seis hojas, una sola fuente de verdad.</span><span class="en">Six sheets, one source of truth.</span></h2>
     <div class="grid">
-      <div class="card"><div class="n">01 · Tablero</div><h3>Una página para decidir</h3><p>Cinco indicadores, estado general automático, lectura de valor ganado (PV, EV, AC, SPI(t) y avance verificado), curva S, costo, índices por semana, aceptación, mapa de calor y decisiones requeridas.</p></div>
-      <div class="card"><div class="n">02 · Configuración</div><h3>Todo es ajustable</h3><p>Moneda, presupuesto, regla de valor ganado (0/100, 50/50 o % estimado), umbrales del semáforo, nombre del periodo y los textos de estados y niveles.</p></div>
-      <div class="card"><div class="n">03 · Seguimiento semanal</div><h3>Valor ganado sin fórmulas</h3><p>Capturas plan y real; EV, SPI, CPI, SPI(t) y el desfase en periodos se calculan solos, con el estado de cada semana.</p></div>
-      <div class="card"><div class="n">04 · Entregables</div><h3>Entregado no es aceptado</h3><p>Estado, días en revisión, atraso contra compromiso y aporte al valor ganado según la regla elegida, para contrastar el avance capturado con el verificado.</p></div>
-      <div class="card"><div class="n">05 · Riesgos</div><h3>Gestionados, no solo anotados</h3><p>Responsable, fecha de revisión, disparador y plan de respuesta. Si falta uno, se marca en rojo.</p></div>
-      <div class="card"><div class="n">06 · Léeme</div><h3>Instrucciones en una hoja</h3><p>Cómo capturar, qué significa cada indicador y cómo se calcula el semáforo.</p></div>
+      <div class="card"><div class="n"><span class="es">01 · Tablero</span><span class="en">01 · Dashboard</span></div><h3><span class="es">Una página para decidir</span><span class="en">One page to decide</span></h3><p><span class="es">Cinco indicadores, estado general automático, lectura de valor ganado (PV, EV, AC, SPI(t) y avance verificado), curva S, costo, índices por semana, aceptación, mapa de calor y decisiones requeridas.</span><span class="en">Five indicators, automatic overall status, earned value reading (PV, EV, AC, SPI(t) and verified progress), S-curve, cost, weekly indices, acceptance, heat map and decisions required.</span></p></div>
+      <div class="card"><div class="n"><span class="es">02 · Configuración</span><span class="en">02 · Settings</span></div><h3><span class="es">Todo es ajustable</span><span class="en">Everything is adjustable</span></h3><p><span class="es">Moneda, presupuesto, regla de valor ganado (0/100, 50/50 o % estimado), umbrales del semáforo, nombre del periodo y los textos de estados y niveles.</span><span class="en">Currency, budget, earned value rule (0/100, 50/50 or % estimated), traffic-light thresholds, period name and the status and level texts.</span></p></div>
+      <div class="card"><div class="n"><span class="es">03 · Seguimiento semanal</span><span class="en">03 · Weekly Tracking</span></div><h3><span class="es">Valor ganado sin fórmulas</span><span class="en">Earned value without formulas</span></h3><p><span class="es">Capturas plan y real; EV, SPI, CPI, SPI(t) y el desfase en periodos se calculan solos, con el estado de cada semana.</span><span class="en">Enter plan and actuals; EV, SPI, CPI, SPI(t) and the schedule gap in periods are calculated automatically, with each week's status.</span></p></div>
+      <div class="card"><div class="n"><span class="es">04 · Entregables</span><span class="en">04 · Deliverables</span></div><h3><span class="es">Entregado no es aceptado</span><span class="en">Delivered is not accepted</span></h3><p><span class="es">Estado, días en revisión, atraso contra compromiso y aporte al valor ganado según la regla elegida, para contrastar el avance capturado con el verificado.</span><span class="en">Status, days in review, delay vs. commitment and contribution to earned value under the chosen rule, to compare reported progress with verified progress.</span></p></div>
+      <div class="card"><div class="n"><span class="es">05 · Riesgos</span><span class="en">05 · Risks</span></div><h3><span class="es">Gestionados, no solo anotados</span><span class="en">Managed, not just listed</span></h3><p><span class="es">Responsable, fecha de revisión, disparador y plan de respuesta. Si falta uno, se marca en rojo.</span><span class="en">Owner, review date, trigger and response plan. If one is missing, it turns red.</span></p></div>
+      <div class="card"><div class="n"><span class="es">06 · Léeme</span><span class="en">06 · Read Me</span></div><h3><span class="es">Instrucciones en una hoja</span><span class="en">Instructions on one sheet</span></h3><p><span class="es">Cómo capturar, qué significa cada indicador y cómo se calcula el semáforo.</span><span class="en">How to enter data, what each indicator means and how the traffic light is calculated.</span></p></div>
     </div>
   </section>
 
   <section class="sec">
-    <div class="eyebrow">Paso a paso</div>
-    <h2>Cómo usarla.</h2>
+    <div class="eyebrow"><span class="es">Paso a paso</span><span class="en">Step by step</span></div>
+    <h2><span class="es">Cómo usarla.</span><span class="en">How to use it.</span></h2>
     <ol class="steps">
-      <li><b>Configura una vez</b><span>En "Configuración": proyecto, moneda, presupuesto aprobado (BAC) y umbrales acordados con tu cliente o dirección. Si cambias los textos de estados, hazlo antes de capturar.</span></li>
-      <li><b>Carga la línea base</b><span>En "Seguimiento semanal", el avance y costo planeados de todo el proyecto.</span></li>
-      <li><b>Cada viernes, captura lo real</b><span>Avance y costo de la semana cerrada. La semana actual se detecta sola.</span></li>
-      <li><b>Actualiza entregables y riesgos</b><span>Estados, fechas de revisión y los 4 campos de cada riesgo.</span></li>
-      <li><b>Comparte una página</b><span>El tablero se calcula solo. Escribe las decisiones que necesitas y expórtalo a PDF en una hoja horizontal.</span></li>
+      <li><b><span class="es">Configura una vez</span><span class="en">Set it up once</span></b><span class="es">En "Configuración": proyecto, moneda, presupuesto aprobado (BAC) y umbrales acordados con tu cliente o dirección. Si cambias los textos de estados, hazlo antes de capturar.</span><span class="en">In "Settings": project, currency, approved budget (BAC) and the thresholds agreed with your client or leadership. If you change the status texts, do it before entering data.</span></li>
+      <li><b><span class="es">Carga la línea base</span><span class="en">Load the baseline</span></b><span class="es">En "Seguimiento semanal", el avance y costo planeados de todo el proyecto.</span><span class="en">In "Weekly Tracking", the planned progress and cost for the whole project.</span></li>
+      <li><b><span class="es">Cada viernes, captura lo real</span><span class="en">Every Friday, enter actuals</span></b><span class="es">Avance y costo de la semana cerrada. La semana actual se detecta sola.</span><span class="en">Progress and cost for the closed week. The current week is detected automatically.</span></li>
+      <li><b><span class="es">Actualiza entregables y riesgos</span><span class="en">Update deliverables and risks</span></b><span class="es">Estados, fechas de revisión y los 4 campos de cada riesgo.</span><span class="en">Statuses, review dates and the 4 fields of each risk.</span></li>
+      <li><b><span class="es">Comparte una página</span><span class="en">Share one page</span></b><span class="es">El tablero se calcula solo. Escribe las decisiones que necesitas y expórtalo a PDF en una hoja horizontal.</span><span class="en">The dashboard calculates itself. Type the decisions you need and export it to PDF on one landscape page.</span></li>
     </ol>
   </section>
 
   <section class="sec full">
-    <div class="eyebrow">Vista completa</div>
-    <h2>Así se ve con datos de ejemplo.</h2>
-    <p class="intro">Los datos son ficticios. El estado general toma el peor indicador: un riesgo crítico abierto no se esconde detrás de un tablero en verde.</p>
-    <img src="tablero-vista-previa.jpg" alt="Tablero completo con datos de ejemplo" loading="lazy">
+    <div class="eyebrow"><span class="es">Vista completa</span><span class="en">Full view</span></div>
+    <h2><span class="es">Así se ve con datos de ejemplo.</span><span class="en">This is how it looks with sample data.</span></h2>
+    <p class="intro"><span class="es">Los datos son ficticios. El estado general toma el peor indicador: un riesgo crítico abierto no se esconde detrás de un tablero en verde.</span><span class="en">The data is fictional. Overall status takes the worst indicator: an open critical risk doesn't hide behind a green dashboard.</span></p>
+    <img class="es" src="tablero-vista-previa.jpg" alt="Tablero completo con datos de ejemplo" loading="lazy"><img class="en" src="tablero-vista-previa-en.jpg" alt="Full dashboard with sample data" loading="lazy">
   </section>
 
   <section class="sec">
     <div class="dl">
-      <div><h3>Descarga la plantilla</h3><p>Excel · v1.1 · gratuita · licencia CC BY 4.0</p></div>
-      <a class="btn p" href="Tablero_Ejecutivo_Delivery_v1.1.xlsx" download>Descargar Excel</a>
+      <div><h3><span class="es">Descarga la plantilla</span><span class="en">Download the template</span></h3><p><span class="es">Excel · v1.1 · gratuita · licencia CC BY 4.0 · también en inglés</span><span class="en">Excel · v1.1 EN · free · CC BY 4.0 license · also in Spanish</span></p></div>
+      <a class="btn p es" href="Tablero_Ejecutivo_Delivery_v1.1.xlsx" download>Descargar Excel</a>
+      <a class="btn p en" href="Executive_Delivery_Dashboard_v1.1.xlsx" download>Download Excel</a>
     </div>
   </section>
 
   <section class="sec">
     <div class="lic">
-      <div class="eyebrow" style="color:var(--accent)">Licencia</div>
-      <p style="margin:8px 0 0">Puedes usar, copiar y adaptar esta plantilla, incluso en proyectos comerciales, siempre que cites al autor. Texto sugerido:</p>
-      <code>Basado en "Tablero Ejecutivo de Delivery" de Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com · CC BY 4.0</code>
+      <div class="eyebrow" style="color:var(--accent)"><span class="es">Licencia</span><span class="en">License</span></div>
+      <p style="margin:8px 0 0"><span class="es">Puedes usar, copiar y adaptar esta plantilla, incluso en proyectos comerciales, siempre que cites al autor. Texto sugerido:</span><span class="en">You may use, copy and adapt this template, including in commercial projects, as long as you credit the author. Suggested text:</span></p>
+      <code class="es">Basado en "Tablero Ejecutivo de Delivery" de Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com · CC BY 4.0</code>
+      <code class="en">Based on "Executive Delivery Dashboard" by Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com · CC BY 4.0</code>
     </div>
   </section>
 </main>
@@ -184,9 +196,10 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
 <footer>
   <div class="wrap">
     <span>© 2026 Carlos Alberto Ruiz Brito · Delivery con Charly Brito</span>
-    <span><a href="../index.html">Inicio</a> · <a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a></span>
-    <span>Documento elaborado por Carlos Alberto Ruiz Brito · 05/10/2026</span>
+    <span><a href="../index.html"><span class="es">Inicio</span><span class="en">Home</span></a> · <a href="../cv.html">CV</a> · <a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener">LinkedIn</a> · <a href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a></span>
+    <span><span class="es">Documento elaborado por Carlos Alberto Ruiz Brito · 05/10/2026 · actualizado 14/10/2026</span><span class="en">Created by Carlos Alberto Ruiz Brito · 05/10/2026 · updated 14/10/2026</span></span>
   </div>
 </footer>
+<script src="../js/tablero.js" defer></script>
 </body>
 </html>

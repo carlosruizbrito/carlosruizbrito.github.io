@@ -1,6 +1,6 @@
 /*
   Catálogo de recursos · Delivery con Charly Brito
-  © Carlos Alberto Ruiz Brito · 05/10/2026
+  © Carlos Alberto Ruiz Brito · 05/10/2026 · actualizado 14/10/2026
 
   PARA PUBLICAR UN RECURSO NUEVO:
   1. Sube su carpeta o archivos a /recursos/ (página .html, miniatura .jpg, descarga).
@@ -17,6 +17,7 @@
   formato   texto corto: "Excel", "PDF", "Plantilla"...
   url       página del recurso (relativa a /recursos/), vacío si es próximamente
   img       miniatura (relativa a /recursos/), vacío si no hay
+  idiomas   (opcional) idiomas disponibles, p. ej. ["es","en"]; agrega la etiqueta ES · EN a la tarjeta
 */
 window.RECURSOS = [
   {
@@ -26,12 +27,13 @@ window.RECURSOS = [
     fecha: "2026-10-05",
     tema: "delivery",
     formato: "Excel",
+    idiomas: ["es", "en"],
     url: "tablero-ejecutivo.html",
     img: "tablero-vista-previa.jpg",
     titulo: { es: "Tablero Ejecutivo de Delivery", en: "Executive Delivery Dashboard" },
     desc: {
-      es: "Avance, SPI, SPI(t), CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso.",
-      en: "Progress, SPI, SPI(t), CPI, client acceptance and risks on one page, with automatic status and a how-to video (Spanish)."
+      es: "Avance, SPI, SPI(t), CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso. En español e inglés.",
+      en: "Progress, SPI, SPI(t), CPI, client acceptance and risks on one page, with automatic status and a how-to video. In English and Spanish."
     }
   },
   {
@@ -79,8 +81,9 @@ window.renderRecursos = function (lista, cont, base) {
   cont.innerHTML = lista.map(function (r) {
     var live = r.estado === "disponible" && r.url;
     var tema = (window.TEMAS[r.tema] || { es: r.tema, en: r.tema });
+    var idi = (r.idiomas && r.idiomas.length > 1) ? ' · ' + r.idiomas.map(function (x) { return esc(x).toUpperCase(); }).join(' · ') : '';
     var tag = live
-      ? '<span class="tag ok"><span class="es">Disponible · ' + esc(r.formato) + '</span><span class="en">Available · ' + esc(r.formato) + '</span></span>'
+      ? '<span class="tag ok"><span class="es">Disponible · ' + esc(r.formato) + idi + '</span><span class="en">Available · ' + esc(r.formato) + idi + '</span></span>'
       : '<span class="tag"><span class="es">Próximamente</span><span class="en">Coming soon</span></span>';
     var img = r.img ? '<img class="thumb" src="' + base + esc(r.img) + '" alt="" loading="lazy">' : '';
     var body = tag + img +

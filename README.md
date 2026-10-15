@@ -9,7 +9,8 @@ https://carlosruizbrito.com · carlos@carlosruizbrito.com · [LinkedIn](https://
 | `index.html` | Página de bienvenida (español / inglés) |
 | `cv.html` | Trayectoria completa y CV web |
 | `CV_Carlos_Ruiz_Brito_ES_WEB.pdf` / `CV_Carlos_Ruiz_Brito_EN_WEB.pdf` | CV descargable |
-| `recursos/` | Recursos gratuitos (CC BY 4.0): Tablero Ejecutivo de Delivery v1.1, video de uso y página del recurso |
+| `recursos/` | Recursos gratuitos (CC BY 4.0): Tablero Ejecutivo de Delivery v1.1 en español (`Tablero_Ejecutivo_Delivery_v1.1.xlsx`) e inglés (`Executive_Delivery_Dashboard_v1.1.xlsx`), video de uso con versión subtitulada en inglés y página bilingüe del recurso |
+| `js/` | Scripts del sitio (idioma, catálogo, CV y página del tablero) |
 | `CNAME` | Dominio personalizado para GitHub Pages |
 
 ## Licencias
@@ -20,4 +21,4 @@ https://carlosruizbrito.com · carlos@carlosruizbrito.com · [LinkedIn](https://
 #DeliveryConCharlyBrito
 
 ---
-Documento elaborado por Carlos Alberto Ruiz Brito · 11/10/2026
+Documento elaborado por Carlos Alberto Ruiz Brito · 11/10/2026 · actualizado 14/10/2026
