@@ -4,7 +4,7 @@
   var T={es:'Tablero Ejecutivo de Delivery · Plantilla gratuita · Delivery con Charly Brito',en:'Executive Delivery Dashboard · Free template · Delivery con Charly Brito'};
   function set(l,guardar){
     document.documentElement.lang=l;
-    b.textContent=l==='es'?'EN':'ES';
+    b.textContent=l==='es'?'EN':'ES';b.setAttribute('aria-label',l==='es'?'EN · View in English':'ES · Ver en español');b.setAttribute('lang',l==='es'?'en':'es');
     document.title=T[l];
     document.querySelectorAll('video').forEach(function(v){if(!v.classList.contains(l)&&!v.paused)v.pause()});
     if(guardar){try{localStorage.setItem('crb-lang',l)}catch(e){}}
