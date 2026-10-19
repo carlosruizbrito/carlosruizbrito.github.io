@@ -1,12 +1,13 @@
 /*
   Catálogo de recursos · Delivery con Charly Brito
-  © Carlos Alberto Ruiz Brito · 05/10/2026 · actualizado 14/10/2026
+  © Carlos Alberto Ruiz Brito · 05/10/2026 · actualizado 18/10/2026
 
   PARA PUBLICAR UN RECURSO NUEVO:
   1. Sube su carpeta o archivos a /recursos/ (página .html, miniatura .jpg, descarga).
   2. Agrega un bloque { ... } a la lista de abajo (copia uno existente y cambia los datos).
   3. Cambia estado a "disponible" cuando ya se pueda descargar.
-  El inicio (vitrina de 3) y el catálogo completo se actualizan solos.
+  El inicio y el catálogo se actualizan solos: los disponibles van como tarjeta
+  y los "proximamente" en la lista compacta "En preparación".
 
   Campos:
   id        identificador corto, sin espacios
@@ -17,6 +18,7 @@
   formato   texto corto: "Excel", "PDF", "Plantilla"...
   url       página del recurso (relativa a /recursos/), vacío si es próximamente
   img       miniatura (relativa a /recursos/), vacío si no hay
+  img_en    (opcional) miniatura en inglés; si no existe se usa img
   idiomas   (opcional) idiomas disponibles, p. ej. ["es","en"]; agrega la etiqueta ES · EN a la tarjeta
 */
 window.RECURSOS = [
@@ -30,6 +32,7 @@ window.RECURSOS = [
     idiomas: ["es", "en"],
     url: "tablero-ejecutivo.html",
     img: "tablero-vista-previa.jpg",
+    img_en: "tablero-vista-previa-en.jpg",
     titulo: { es: "Tablero Ejecutivo de Delivery", en: "Executive Delivery Dashboard" },
     desc: {
       es: "Avance, SPI, SPI(t), CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso. En español e inglés.",
@@ -84,8 +87,9 @@ window.renderRecursos = function (lista, cont, base) {
     var idi = (r.idiomas && r.idiomas.length > 1) ? ' · ' + r.idiomas.map(function (x) { return esc(x).toUpperCase(); }).join(' · ') : '';
     var tag = live
       ? '<span class="tag ok"><span class="es">Disponible · ' + esc(r.formato) + idi + '</span><span class="en">Available · ' + esc(r.formato) + idi + '</span></span>'
-      : '<span class="tag"><span class="es">Próximamente</span><span class="en">Coming soon</span></span>';
-    var img = r.img ? '<img class="thumb" src="' + base + esc(r.img) + '" alt="" loading="lazy">' : '';
+      : '<span class="tag"><span class="es">En preparación</span><span class="en">Coming soon</span></span>';
+    var im = function (src, cls) { return '<img class="thumb' + cls + '" src="' + base + esc(src) + '" alt="" width="1087" height="1363" loading="lazy">'; };
+    var img = !r.img ? '' : (r.img_en ? im(r.img, ' es') + im(r.img_en, ' en') : im(r.img, ''));
     var body = tag + img +
       '<span class="topic"><span class="es">' + esc(tema.es) + '</span><span class="en">' + esc(tema.en) + '</span></span>' +
       '<h3 class="es">' + esc(r.titulo.es) + '</h3><h3 class="en">' + esc(r.titulo.en) + '</h3>' +
@@ -94,6 +98,17 @@ window.renderRecursos = function (lista, cont, base) {
     return live
       ? '<a class="tool live" href="' + base + esc(r.url) + '">' + body + '</a>'
       : '<div class="tool">' + body + '</div>';
+  }).join("");
+};
+
+/* Lista compacta "En preparación": tema, título y descripción, sin tarjeta. */
+window.renderProx = function (lista, ul) {
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; }); }
+  ul.innerHTML = lista.map(function (r) {
+    var tema = (window.TEMAS[r.tema] || { es: r.tema, en: r.tema });
+    return '<li><span class="topic"><span class="es">' + esc(tema.es) + ' · ' + esc(r.formato) + '</span><span class="en">' + esc(tema.en) + ' · ' + esc(r.formato) + '</span></span>' +
+      '<b class="es">' + esc(r.titulo.es) + '</b><b class="en">' + esc(r.titulo.en) + '</b>' +
+      '<span class="d es">' + esc(r.desc.es) + '</span><span class="d en">' + esc(r.desc.en) + '</span></li>';
   }).join("");
 };
 

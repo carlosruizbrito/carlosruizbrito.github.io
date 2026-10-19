@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
 <meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#140a2e">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Delivery con Charly Brito · Carlos Alberto Ruiz Brito</title>
 <meta name="description" content="Delivery con Charly Brito: prácticas de Delivery Management, infraestructura crítica e IA aplicada, por Carlos Alberto Ruiz Brito.">
@@ -61,7 +62,7 @@ a{color:var(--accent)}
 .cvband .ctas{margin-top:0;justify-content:flex-end}
 @media (max-width:900px){.cvband{grid-template-columns:minmax(0,1fr);padding:22px}.cvband .ctas{justify-content:flex-start}}
 .panel svg{width:100%;height:auto;display:block}
-.kpis{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:-34px;position:relative}
 .kpi{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px}
 .kpi b{display:block;font-size:1.9rem;line-height:1;font-weight:800;color:var(--fg);font-variant-numeric:tabular-nums}
 .kpi span{display:block;margin-top:8px;font-size:.82rem;color:var(--muted);line-height:1.35}
@@ -109,6 +110,10 @@ h2{font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.015em;margin:8px 0 10px;lin
 .post:hover{border-color:var(--accent)}
 .post q{font-weight:700;font-size:1.02rem;quotes:none}
 .post span{font-size:.84rem;color:var(--muted)}
+.post .go{margin-top:auto;font-weight:600;color:var(--accent)}
+.follow{margin-top:18px;display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.follow p{margin:0;color:var(--muted)}.follow b{font-size:1.4rem;color:var(--fg);margin-right:4px}.follow .ctas{margin-top:0}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.d{background:var(--violet);color:var(--ink)}:root:not([data-theme="light"]) .btn.o{border-color:var(--violet);color:var(--violet)}}
 footer{margin-top:64px;border-top:1px solid var(--line)}
 footer .wrap{padding-block:26px;display:flex;flex-wrap:wrap;gap:14px 28px;justify-content:space-between;align-items:center;font-size:.88rem;color:var(--muted)}
 footer nav{display:flex;gap:18px;flex-wrap:wrap}
@@ -124,18 +129,13 @@ details.older summary::before{content:"+ "}
 details.older[open] summary::before{content:"– "}
 details.older article{padding-left:0}
 details.older article::before{left:-32px}
-.mnav{display:none}
 @media (max-width:900px){
  .panel{display:none}
  .herogrid{padding-block:28px 56px}
  .hero h1{font-size:2.1rem}
  .lead{font-size:1rem}
- .mnav{display:flex;gap:8px;position:sticky;top:0;z-index:20;overflow-x:auto;padding:10px 16px;background:rgba(20,10,46,.94);backdrop-filter:blur(8px);scrollbar-width:none}
- .mnav::-webkit-scrollbar{display:none}
- .mnav a{flex:none;font:600 .85rem var(--sans);color:#e6e3ff;text-decoration:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22)}
- .mnav a.cvb{background:#fff;color:var(--ink);border-color:#fff}
  section{padding-block:36px 4px;scroll-margin-top:58px}
- .kpis{gap:8px;margin-top:-28px}
+ .kpis{gap:8px;margin-top:16px}
  .kpi{padding:12px}.kpi b{font-size:1.45rem}.kpi span{font-size:.76rem}
  .intro{margin-bottom:16px;font-size:.95rem}
  .hs{display:grid!important;grid-auto-flow:column;grid-auto-columns:82%;grid-template-columns:none!important;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;padding-bottom:10px;margin-inline:-20px;padding-inline:20px;scroll-padding-inline:20px;scrollbar-width:thin}
@@ -144,7 +144,7 @@ details.older article::before{left:-32px}
  .cvband h3{font-size:1.15rem}
  footer{margin-top:40px}
 }
-@media (max-width:900px){.herogrid,.together{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis .kpi:first-child{grid-column:1/-1}.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.tools,.posts,.wins{grid-template-columns:minmax(0,1fr)}.navlinks a{display:none}}
+@media (max-width:900px){.herogrid,.together{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.tools,.posts,.wins{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:480px){.pillars{grid-template-columns:minmax(0,1fr)}}
 
 /* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
@@ -154,29 +154,56 @@ details.older article::before{left:-32px}
 ::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
 }
 .brand{view-transition-name:marca}
-.thumb[src$="tablero-vista-previa.jpg"]{view-transition-name:tablero}
+.thumb[src$="tablero-vista-previa.jpg"],.thumb[src$="tablero-vista-previa-en.jpg"]{view-transition-name:tablero}
 /* Aparición de secciones al hacer scroll (solo con JS y sin "reducir movimiento") */
 @media (prefers-reduced-motion:no-preference){
 html.rv .sec{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
 html.rv .sec.vis{opacity:1;transform:none}
 }
+
+/* Navegación única del sitio: página actual marcada */
+.navlinks a[aria-current]{color:#fff;box-shadow:inset 0 -2px 0 var(--mint);border-radius:6px 6px 0 0}
+.navlinks a.navcv[aria-current]{box-shadow:0 0 0 2px var(--mint);border-radius:6px}
+.mnav{display:none}
+@media (max-width:900px){
+ .navlinks a:not(.navcv){display:none}
+ .mnav{display:flex;gap:8px;position:sticky;top:0;z-index:20;overflow-x:auto;padding:10px 16px;background:rgba(20,10,46,.94);backdrop-filter:blur(8px);scrollbar-width:none}
+ .mnav::-webkit-scrollbar{display:none}
+ .mnav a{flex:none;font:600 .85rem var(--sans);color:#e6e3ff;text-decoration:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22)}
+ .mnav a.cvb{background:#fff;color:var(--ink);border-color:#fff}
+ .mnav a[aria-current]{background:rgba(127,216,207,.18);border-color:var(--mint);color:#fff}
+ .mnav a.cvb[aria-current]{background:#fff;color:var(--ink);box-shadow:0 0 0 2px var(--mint)}
+}
+
+/* Recursos: disponibles destacados + lista compacta "En preparación" */
+.resgrid{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:14px;align-items:start}
+.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.feat .thumb{height:210px}
+.soon{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:18px 18px 6px}
+.soon h3{margin:0 0 2px;font-size:.98rem}
+.soon .note{margin:0 0 8px;font-size:.84rem;color:var(--muted)}
+.soon ul{list-style:none;margin:0;padding:0}
+.soon li{padding:12px 0;border-top:1px solid var(--line);display:grid;gap:2px}
+.soon li b{font-size:.95rem}
+.soon li .d{font-size:.86rem;color:var(--muted)}
+@media (max-width:900px){.resgrid{grid-template-columns:minmax(0,1fr)}}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:#fff;color:#140a2e;font-weight:700;padding:10px 14px;border-radius:8px;text-decoration:none}.skip:focus{top:12px}
+a,button{touch-action:manipulation}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 </head>
 <body>
+<a class="skip" href="#contenido"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
 <header class="hero">
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="#top">Delivery con <span>Charly Brito</span></a>
-      <div class="navlinks">
-        <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
-        <a href="#linkedin">LinkedIn</a>
-        <a href="#recursos"><span class="es">Recursos</span><span class="en">Resources</span></a>
-        <a class="navcv" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
-        <button type="button" class="lang" id="lang" aria-label="Cambiar idioma / Switch language">EN</button>
-      </div>
+      <nav class="navlinks" aria-label="Principal">
+        <a href="./" aria-current="page"><span class="es">Inicio</span><span class="en">Home</span></a><a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="#linkedin">LinkedIn</a><a href="recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a><a class="navcv" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+        <button type="button" class="lang" id="lang" lang="en" aria-label="EN · View in English">EN</button>
+      </nav>
     </div>
     <div class="herogrid" id="top">
       <div>
@@ -185,7 +212,7 @@ html.rv .sec.vis{opacity:1;transform:none}
         <p class="lead"><span class="es">Comparto prácticas reales de gestión de proyectos, infraestructura y continuidad operativa, e IA aplicada a la entrega. Para Project Managers, Delivery Managers y equipos de TI.</span><span class="en">I share real-world practices on project delivery, infrastructure and business continuity, and AI applied to delivery. For Project Managers, Delivery Managers and IT teams.</span></p>
         <div class="who"><img class="avatar" src="foto-carlos.jpg" alt="Carlos Alberto Ruiz Brito" width="64" height="64"><div><b>Carlos Alberto Ruiz Brito</b><span>Senior Delivery Manager · <span class="es">Ciudad de México</span><span class="en">Mexico City</span></span></div></div>
         <div class="ctas">
-          <a class="btn p" href="cv.html"><span class="es">Conoce mi trayectoria</span><span class="en">View my résumé</span></a>
+          <a class="btn p" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
           <a class="btn g" href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Sígueme en LinkedIn</span><span class="en">Follow me on LinkedIn</span></a>
         </div>
       </div>
@@ -193,35 +220,34 @@ html.rv .sec.vis{opacity:1;transform:none}
         <svg viewBox="0 0 410 330" font-family="IBM Plex Mono, monospace">
           <rect x=".5" y=".5" width="409" height="329" rx="12" fill="rgba(255,255,255,.04)" stroke="rgba(255,255,255,.18)"/>
           <circle cx="18" cy="18" r="4" fill="#00B8A9"/><circle cx="32" cy="18" r="4" fill="#f0b429"/><circle cx="46" cy="18" r="4" fill="rgba(255,255,255,.25)"/>
-          <text x="64" y="22" font-size="9.5" fill="rgba(255,255,255,.6)" letter-spacing="1.6">DELIVERY · CONTINUIDAD · IA</text>
+          <text class="es" x="64" y="22" font-size="9.5" fill="rgba(255,255,255,.6)" letter-spacing="1.6">DELIVERY · CONTINUIDAD · IA</text><text class="en" x="64" y="22" font-size="9.5" fill="rgba(255,255,255,.6)" letter-spacing="1.6">DELIVERY · CONTINUITY · AI</text>
           <text x="16" y="48" font-size="9" fill="#8fd3ff" letter-spacing="1.5">01 ROADMAP</text>
           <rect x="16" y="64" width="120" height="12" rx="3" fill="#6A0DAD"/><rect x="104" y="82" width="132" height="12" rx="3" fill="#7b3fd0"/><rect x="200" y="100" width="150" height="12" rx="3" fill="#0077B5"/>
           <g stroke="rgba(255,255,255,.45)" fill="none" stroke-width="1.1"><path d="M136 70h6v18h-6"/><path d="M236 88h6v18h-6"/></g>
           <rect x="372" y="100" width="11" height="11" transform="rotate(45 377.5 105.5)" fill="#fff"/>
           <line x1="262" y1="60" x2="262" y2="118" stroke="#f0b429" stroke-dasharray="3 3" stroke-width="1.3"/>
-          <text x="16" y="142" font-size="9" fill="#8fd3ff" letter-spacing="1.5">02 CONTINUIDAD OPERATIVA</text>
+          <text class="es" x="16" y="142" font-size="9" fill="#8fd3ff" letter-spacing="1.5">02 CONTINUIDAD OPERATIVA</text><text class="en" x="16" y="142" font-size="9" fill="#8fd3ff" letter-spacing="1.5">02 BUSINESS CONTINUITY</text>
           <g fill="none" stroke="#bfe3ff" stroke-width="1.3"><rect x="16" y="152" width="120" height="78" rx="5"/><rect x="274" y="152" width="120" height="78" rx="5" stroke-dasharray="5 4"/><rect x="28" y="176" width="96" height="16" rx="2"/><rect x="28" y="198" width="96" height="22" rx="2"/><rect x="286" y="176" width="96" height="16" rx="2"/><rect x="286" y="198" width="96" height="22" rx="2"/></g>
-          <text x="28" y="168" font-size="9" fill="#fff">PRINCIPAL</text><text x="286" y="168" font-size="9" fill="#fff">DR</text>
+          <text class="es" x="28" y="168" font-size="9" fill="#fff">PRINCIPAL</text><text class="en" x="28" y="168" font-size="9" fill="#fff">PRIMARY</text><text x="286" y="168" font-size="9" fill="#fff">DR</text>
           <path d="M136 182H274" stroke="#00B8A9" stroke-width="1.5"/><path d="M266 177l8 5-8 5" fill="none" stroke="#00B8A9" stroke-width="1.5"/>
           <path d="M274 210H136" stroke="#00B8A9" stroke-width="1.5" stroke-dasharray="4 4"/><path d="M144 205l-8 5 8 5" fill="none" stroke="#00B8A9" stroke-width="1.5"/>
-          <text x="16" y="254" font-size="9" fill="#8fd3ff" letter-spacing="1.5">03 IA APLICADA</text>
+          <text class="es" x="16" y="254" font-size="9" fill="#8fd3ff" letter-spacing="1.5">03 IA APLICADA</text><text class="en" x="16" y="254" font-size="9" fill="#8fd3ff" letter-spacing="1.5">03 APPLIED AI</text>
           <rect x="16" y="262" width="378" height="52" rx="6" fill="rgba(0,0,0,.28)" stroke="rgba(201,162,255,.45)"/>
-          <text x="28" y="282" font-size="10" fill="#c9a2ff">ia&gt;</text><text x="56" y="282" font-size="10" fill="#e6e8f7">propone: resumen ejecutivo y riesgos</text>
-          <text x="28" y="302" font-size="10" fill="#7fe6da">pm&gt;</text><text x="56" y="302" font-size="10" fill="#e6e8f7">valida y decide ✓</text>
+          <text x="28" y="282" font-size="10" fill="#c9a2ff">ia&gt;</text><text class="es" x="56" y="282" font-size="10" fill="#e6e8f7">propone: resumen ejecutivo y riesgos</text><text class="en" x="56" y="282" font-size="10" fill="#e6e8f7">proposes: executive summary and risks</text>
+          <text x="28" y="302" font-size="10" fill="#7fe6da">pm&gt;</text><text class="es" x="56" y="302" font-size="10" fill="#e6e8f7">valida y decide ✓</text><text class="en" x="56" y="302" font-size="10" fill="#e6e8f7">validates and decides ✓</text>
         </svg>
       </div>
     </div>
   </div>
 </header>
-<nav class="mnav" aria-label="Secciones"><a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="#linkedin">LinkedIn</a><a href="#recursos"><span class="es">Recursos</span><span class="en">Resources</span></a><a href="cv.html" class="cvb">CV</a></nav>
+<nav class="mnav" aria-label="Secciones"><a href="./" aria-current="page"><span class="es">Inicio</span><span class="en">Home</span></a><a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="#linkedin">LinkedIn</a><a href="recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a><a class="cvb" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a></nav>
 
-<main class="wrap">
+<main class="wrap" id="contenido" tabindex="-1">
   <div class="kpis">
     <div class="kpi"><b>15</b><span class="es">años en tecnología; dirigiendo entrega desde 2015</span><span class="en">years in technology; leading delivery since 2015</span></div>
     <div class="kpi"><b>40+</b><span class="es">personas en programas que dirigí</span><span class="en">people in programs I led</span></div>
     <div class="kpi"><b>4</b><span class="es">clientes simultáneos</span><span class="en">clients at a time</span></div>
     <div class="kpi"><b>6</b><span class="es">países con equipos y clientes</span><span class="en">countries with teams and clients</span></div>
-    <div class="kpi"><b>5,600+</b><span class="es">seguidores en LinkedIn</span><span class="en">LinkedIn followers</span></div>
   </div>
 
   <section class="sec" id="trayectoria">
@@ -244,14 +270,14 @@ html.rv .sec.vis{opacity:1;transform:none}
     </div>
     <div class="cvband">
       <div>
-        <div class="eyebrow"><span class="es">Trayectoria completa</span><span class="en">Full résumé</span></div>
+        <div class="eyebrow"><span class="es">CV completo</span><span class="en">Full CV</span></div>
         <h3><span class="es">15 años en tecnología: infraestructura crítica, transformación digital y continuidad operativa.</span><span class="en">15 years in technology: critical infrastructure, digital transformation and business continuity.</span></h3>
         <p><span class="es">Experiencia, certificaciones y logros en una sola página, también disponible en PDF.</span><span class="en">Experience, certifications and results on one page, also available as a PDF.</span></p>
       </div>
       <div class="ctas">
-        <a class="btn p" href="cv.html"><span class="es">Ver CV en línea</span><span class="en">View online</span></a>
-        <a class="btn g es" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Descargar PDF</a>
-        <a class="btn g en" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Download PDF</a>
+        <a class="btn p" href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+        <a class="btn g es" href="CV_Carlos_Ruiz_Brito_ES_WEB.pdf" download>Descargar CV (PDF)</a>
+        <a class="btn g en" href="CV_Carlos_Ruiz_Brito_EN_WEB.pdf" download>Download CV (PDF)</a>
       </div>
     </div>
   </section>
@@ -268,21 +294,30 @@ html.rv .sec.vis{opacity:1;transform:none}
     </div>
     <h3 class="sub"><span class="es">Publicaciones recientes</span><span class="en">Recent posts</span></h3>
     <div class="posts hs">
-      <a class="post" href="https://www.linkedin.com/posts/carlosruizb_projectmanagement-deliverymanagement-pmo-share-7437992710130569216-63l3" target="_blank" rel="noopener"><q class="es">6 documentos que no pueden faltar en un proyecto.</q><q class="en">6 documents every project needs.</q><span class="es">Más de 39,000 impresiones · Leer en LinkedIn →</span><span class="en">39,000+ impressions · Read on LinkedIn →</span></a>
-      <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">El % de avance no dice si vas bien.</q><q class="en">Percent complete doesn't tell you if you're on track.</q><span class="es">Serie: el tablero semanal de un Delivery Manager →</span><span class="en">Series: a Delivery Manager's weekly dashboard →</span></a>
-      <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">Un riesgo sin dueño es un problema con fecha.</q><q class="en">A risk without an owner is a problem with a due date.</q><span class="es">Ver todas las publicaciones →</span><span class="en">See all posts →</span></a>
+      <a class="post" href="https://www.linkedin.com/posts/carlosruizb_projectmanagement-deliverymanagement-pmo-share-7437992710130569216-63l3" target="_blank" rel="noopener"><q class="es">6 documentos que no pueden faltar en un proyecto.</q><q class="en">6 documents every project needs.</q><span><span class="es">Delivery Management · más de 39,000 impresiones</span><span class="en">Delivery Management · 39,000+ impressions</span></span><span class="go"><span class="es">Leer en LinkedIn →</span><span class="en">Read on LinkedIn →</span></span></a>
+      <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">El % de avance no dice si vas bien.</q><q class="en">Percent complete doesn't tell you if you're on track.</q><span><span class="es">Serie: el tablero semanal de un Delivery Manager</span><span class="en">Series: a Delivery Manager's weekly dashboard</span></span><span class="go"><span class="es">Leer en LinkedIn →</span><span class="en">Read on LinkedIn →</span></span></a>
+      <a class="post" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><q class="es">Un riesgo sin dueño es un problema con fecha.</q><q class="en">A risk without an owner is a problem with a due date.</q><span><span class="es">Gestión de riesgos</span><span class="en">Risk management</span></span><span class="go"><span class="es">Leer en LinkedIn →</span><span class="en">Read on LinkedIn →</span></span></a>
     </div>
-    <p class="allres"><a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Seguir en LinkedIn</span><span class="en">Follow on LinkedIn</span> →</a></p>
+    <div class="follow">
+      <p><b>5,600+</b> <span class="es">seguidores en LinkedIn</span><span class="en">LinkedIn followers</span></p>
+      <div class="ctas">
+        <a class="btn d" href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Seguir en LinkedIn</span><span class="en">Follow on LinkedIn</span></a>
+        <a class="btn o" href="https://www.linkedin.com/in/carlosruizb/recent-activity/all/" target="_blank" rel="noopener"><span class="es">Ver todas las publicaciones</span><span class="en">See all posts</span></a>
+      </div>
+    </div>
   </section>
 
   <section class="sec" id="recursos">
     <div class="eyebrow"><span class="es">Recursos gratuitos</span><span class="en">Free resources</span></div>
     <h2><span class="es">Plantillas listas para usar en tu proyecto.</span><span class="en">Templates ready to use in your project.</span></h2>
     <p class="intro"><span class="es">Hechas desde cero, con datos de ejemplo. Descárgalas, adáptalas y compártelas.</span><span class="en">Built from scratch, with sample data. Download, adapt and share them.</span></p>
-    <div class="tools hs" id="vitrina">
-      <a class="tool live" href="recursos/tablero-ejecutivo.html"><span class="tag ok">Disponible · Excel</span><h3>Tablero Ejecutivo de Delivery</h3><p>Avance, SPI, CPI, aceptación del cliente y riesgos en una página.</p></a>
+    <div class="resgrid">
+      <div class="feat" id="vitrina">
+        <a class="tool live" href="recursos/tablero-ejecutivo.html"><span class="tag ok"><span class="es">Disponible · Excel</span><span class="en">Available · Excel</span></span><h3 class="es">Tablero Ejecutivo de Delivery</h3><h3 class="en">Executive Delivery Dashboard</h3><p class="es">Avance, SPI, CPI, aceptación del cliente y riesgos en una página.</p><p class="en">Progress, SPI, CPI, client acceptance and risks on one page.</p></a>
+      </div>
+      <aside class="soon" id="prox" aria-labelledby="proxT"><h3 id="proxT"><span class="es">En preparación</span><span class="en">Coming soon</span></h3><p class="note"><span class="es">Se publican junto con su serie en LinkedIn.</span><span class="en">Released together with their LinkedIn series.</span></p><ul id="proxList"></ul></aside>
     </div>
-    <p class="allres"><a href="recursos/" id="verTodos"><span class="es">Ver todos los recursos</span><span class="en">See all resources</span> <span id="nRec"></span> →</a></p>
+    <p class="allres"><a href="recursos/"><span class="es">Ver catálogo de recursos</span><span class="en">Browse all resources</span> →</a></p>
     <p class="lic"><span class="es">Los recursos se publican con licencia CC BY 4.0: puedes usarlos y adaptarlos citando a Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span><span class="en">Resources are published under CC BY 4.0: use and adapt them with credit to Carlos Alberto Ruiz Brito · Delivery con Charly Brito.</span></p>
     <p class="collab"><span class="es">¿Un tema que te gustaría ver resuelto o adaptaste una plantilla? Cuéntamelo:</span><span class="en">A topic you'd like covered, or adapted a template? Tell me:</span> <a href="mailto:carlos@carlosruizbrito.com?subject=Delivery%20con%20Charly%20Brito">carlos@carlosruizbrito.com</a></p>
   </section>
@@ -291,12 +326,13 @@ html.rv .sec.vis{opacity:1;transform:none}
 <footer>
   <div class="wrap">
     <span><b>Delivery con Charly Brito</b> · Carlos Alberto Ruiz Brito</span>
-    <nav>
+    <nav aria-label="Pie de página">
+      <a href="index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+      <a href="cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
       <a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a>
-      <a href="cv.html"><span class="es">Trayectoria completa</span><span class="en">Full résumé</span></a>
     </nav>
-    <span class="legal"><span class="es">© Carlos Alberto Ruiz Brito · 05/10/2026 · Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© Carlos Alberto Ruiz Brito · 10/05/2026 · Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
+    <span class="legal"><span class="es">© 2026 Carlos Alberto Ruiz Brito · Página elaborada el 05/10/2026 · actualizada el 18/10/2026. Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© 2026 Carlos Alberto Ruiz Brito · Page created Oct 5, 2026 · updated Oct 18, 2026. Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
   </div>
 </footer>
 <script src="recursos/recursos.js" defer></script>
