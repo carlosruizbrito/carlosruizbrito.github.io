@@ -23,42 +23,14 @@
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="../css/sitio.css">
 <style>
-:root{--ink:#140a2e;--ink2:#1d1450;--blue:#0b2a4a;--violet:#c9a2ff;--sky:#5fb8ff;--mint:#7fd8cf;--amber:#f0b429;
---bg:#f6f5fb;--surface:#ffffff;--fg:#17142b;--muted:#5d5873;--line:#e2deef;--accent:#6A0DAD;
---sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e0a1f;--surface:#171230;--fg:#ecebf6;--muted:#a8a3c2;--line:#2b2550;--accent:#c9a2ff;color-scheme:dark}}
-*{box-sizing:border-box}html[lang="es"] .en,html[lang="en"] .es{display:none!important}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.6}
-a{color:var(--accent)}
-.wrap{max-width:1080px;margin:0 auto;padding-inline:20px}
-.eyebrow{font:600 .74rem var(--sans);letter-spacing:.2em;text-transform:uppercase}
-:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
-.hero{color:#fff;background:radial-gradient(900px 500px at 100% 0%,rgba(0,119,181,.55),transparent 60%),radial-gradient(800px 500px at 0% 120%,rgba(106,13,173,.7),transparent 60%),linear-gradient(110deg,var(--ink),var(--ink2) 50%,var(--blue));position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px) 0 0/48px 48px,linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px) 0 0/48px 48px;pointer-events:none}
-.nav{position:relative;display:flex;align-items:center;justify-content:space-between;padding-block:18px;gap:12px}
-.brand{font-weight:800;color:#fff;text-decoration:none}.brand span{color:var(--violet)}
-.navlinks{display:flex;gap:6px;align-items:center}
-.navlinks a,.lang{font:500 .86rem var(--sans);color:#d9dcf2;text-decoration:none;padding:6px 10px;border-radius:6px}
-.lang{border:1px solid rgba(255,255,255,.3);background:transparent;cursor:pointer;font-family:var(--mono)}
-.navlinks a:hover{background:rgba(255,255,255,.08)}
-.navlinks a.navcv{background:#fff;color:var(--ink);font-weight:700}
-.top{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:40px 64px}
-.hero .eyebrow{color:var(--mint)}
-.hero h1{font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.06;letter-spacing:-.02em;margin:12px 0 16px;font-weight:800}
-.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--violet),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
-.lead{font-size:1.08rem;color:#d9dcf2;margin:0}
+.top{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;padding-block:28px 64px}
 .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
 .meta span{font:500 .78rem var(--mono);color:#c9cdeb;border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:3px 10px}
 .ctas{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.btn{display:inline-block;font:600 .92rem var(--sans);padding:12px 18px;border-radius:8px;text-decoration:none;border:1px solid transparent}
-.btn.p{background:#fff;color:var(--ink)}
-.btn.g{border-color:rgba(255,255,255,.35);color:#fff}
 .shot{border-radius:12px;overflow:hidden;box-shadow:0 24px 60px rgba(0,0,0,.4);border:1px solid rgba(255,255,255,.15);background:#fff}
 .shot img{display:block;width:100%;height:340px;object-fit:cover;object-position:top}
-section{padding-block:56px 8px}
-h2{font-size:clamp(1.45rem,3vw,1.95rem);letter-spacing:-.015em;margin:8px 0 10px;line-height:1.15}
-.sec .eyebrow{color:var(--accent)}
 .intro{color:var(--muted);max-width:46em;margin:0 0 24px}
 video{width:100%;display:block;border-radius:12px;border:1px solid var(--line);background:#000}
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
@@ -78,56 +50,29 @@ video{width:100%;display:block;border-radius:12px;border:1px solid var(--line);b
 .lic code{display:block;margin-top:10px;font:500 .85rem var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;white-space:normal}
 .dl{display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between;color:#fff;border-radius:16px;padding:26px 28px;background:radial-gradient(600px 300px at 100% 0%,rgba(0,119,181,.5),transparent 60%),linear-gradient(110deg,var(--ink),var(--ink2) 60%,var(--blue))}
 .dl h3{margin:0;font-size:1.35rem}.dl p{margin:4px 0 0;color:#d9dcf2}
-footer{margin-top:56px;border-top:1px solid var(--line)}
-footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center;font-size:.86rem;color:var(--muted)}
-footer nav{display:flex;gap:18px;flex-wrap:wrap}
-footer a{color:var(--muted)}
-footer a:hover{color:var(--accent)}
-footer .legal{width:100%;font-size:.78rem}
 
-
-.navlinks a{white-space:nowrap}
 @media (max-width:900px){.top,.grid,.q{grid-template-columns:minmax(0,1fr)}.shot img{height:240px}}
 .langnote{font-size:.82rem;color:var(--muted);margin:10px 0 0}
 .sub{font-size:1.05rem;margin:28px 0 12px}
 
-/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
-@media (prefers-reduced-motion:no-preference){
-@view-transition{navigation:auto}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
-::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
-}
-.brand{view-transition-name:marca}
 .shot{view-transition-name:tablero}
 
-/* Navegación única del sitio: página actual marcada */
-.navlinks a[aria-current]{color:#fff;box-shadow:inset 0 -2px 0 var(--mint);border-radius:6px 6px 0 0}
-.navlinks a.navcv[aria-current]{box-shadow:0 0 0 2px var(--mint);border-radius:6px}
-.mnav{display:none}
-@media (max-width:900px){
- .navlinks a:not(.navcv){display:none}
- .mnav{display:flex;gap:8px;position:sticky;top:0;z-index:20;overflow-x:auto;padding:10px 16px;background:rgba(20,10,46,.94);backdrop-filter:blur(8px);scrollbar-width:none}
- .mnav::-webkit-scrollbar{display:none}
- .mnav a{flex:none;font:600 .85rem var(--sans);color:#e6e3ff;text-decoration:none;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.22)}
- .mnav a.cvb{background:#fff;color:var(--ink);border-color:#fff}
- .mnav a[aria-current]{background:rgba(127,216,207,.18);border-color:var(--mint);color:#fff}
- .mnav a.cvb[aria-current]{background:#fff;color:var(--ink);box-shadow:0 0 0 2px var(--mint)}
-}
-.skip{position:absolute;left:12px;top:-60px;z-index:100;background:#fff;color:#140a2e;font-weight:700;padding:10px 14px;border-radius:8px;text-decoration:none}.skip:focus{top:12px}
-a,button{touch-action:manipulation}
 </style>
 </head>
 <body>
 <a class="skip" href="#contenido"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
-<header class="hero">
-  <div class="wrap">
-    <div class="nav">
-      <a class="brand" href="../index.html">Delivery con <span>Charly Brito</span></a>
-      <nav class="navlinks" aria-label="Principal">
-        <a href="../index.html"><span class="es">Inicio</span><span class="en">Home</span></a><a href="../index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="../index.html#linkedin">LinkedIn</a><a href="./" aria-current="true"><span class="es">Recursos</span><span class="en">Resources</span></a><a class="navcv" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
-        <button type="button" class="lang" id="lang" lang="en" aria-label="EN · View in English">EN</button>
-      </nav>
+<header class="hero phead">
+  <div class="topbar">
+    <a class="brand" href="../">Delivery con <span>Charly Brito</span></a>
+    <nav class="navlinks" aria-label="Principal"><a href="../"><span class="es">Inicio</span><span class="en">Home</span></a><a href="../index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="../index.html#linkedin">LinkedIn</a><a href="../recursos/" aria-current="page"><span class="es">Recursos</span><span class="en">Resources</span></a></nav>
+    <div class="nav-actions">
+      <button type="button" class="lang" id="lang" lang="en" aria-label="EN · View in English">EN</button>
+      <a class="cta cta-sm cta-light navcv" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span><svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
     </div>
+  </div>
+  <nav class="menu" id="menu" aria-label="Menú"><a href="../"><span class="es">Inicio</span><span class="en">Home</span></a><a href="../index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="../index.html#linkedin">LinkedIn</a><a href="../recursos/" aria-current="page"><span class="es">Recursos</span><span class="en">Resources</span></a><div class="divider"></div><a class="m-cv" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span><svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+  <div class="wrap">
     <div class="top">
       <div>
         <div class="eyebrow"><span class="es">Recurso gratuito · Plantilla en Excel</span><span class="en">Free resource · Excel template</span></div>
@@ -145,7 +90,6 @@ a,button{touch-action:manipulation}
     </div>
   </div>
 </header>
-<nav class="mnav" aria-label="Secciones"><a href="../index.html"><span class="es">Inicio</span><span class="en">Home</span></a><a href="../index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="../index.html#linkedin">LinkedIn</a><a href="./" aria-current="true"><span class="es">Recursos</span><span class="en">Resources</span></a><a class="cvb" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a></nav>
 
 <main class="wrap" id="contenido" tabindex="-1">
 
@@ -226,14 +170,16 @@ a,button{touch-action:manipulation}
   <div class="wrap">
     <span><b>Delivery con Charly Brito</b> · Carlos Alberto Ruiz Brito</span>
     <nav aria-label="Pie de página">
-      <a href="../index.html"><span class="es">Inicio</span><span class="en">Home</span></a>
+      <a href="../"><span class="es">Inicio</span><span class="en">Home</span></a>
       <a href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+      <a href="../recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a>
       <a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener">LinkedIn</a>
       <a href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a>
     </nav>
-    <span class="legal"><span class="es">© 2026 Carlos Alberto Ruiz Brito · Página elaborada el 05/10/2026 · actualizada el 18/10/2026. Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© 2026 Carlos Alberto Ruiz Brito · Page created Oct 5, 2026 · updated Oct 18, 2026. Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
+    <span class="legal"><span class="es">© 2026 Carlos Alberto Ruiz Brito · Página elaborada el 05/10/2026 · actualizada el 19/10/2026. Las opiniones y recursos son personales y educativos; no representan a empleadores, clientes ni fabricantes.</span><span class="en">© 2026 Carlos Alberto Ruiz Brito · Page created Oct 5, 2026 · updated Oct 19, 2026. Opinions and resources are personal and educational; they do not represent employers, clients or vendors.</span></span>
   </div>
 </footer>
 <script src="../js/tablero.js" defer></script>
+<script src="../js/nav.js" defer></script>
 </body>
 </html>
