@@ -11,39 +11,40 @@
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="/css/sitio.css">
 <style>
-*{box-sizing:border-box}
-body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:"Inter",system-ui,sans-serif;color:#fff;padding:24px;
-background:radial-gradient(900px 500px at 100% 0%,rgba(0,119,181,.55),transparent 60%),radial-gradient(800px 500px at 0% 120%,rgba(106,13,173,.7),transparent 60%),linear-gradient(110deg,#140a2e,#1d1450 50%,#0b2a4a)}
-.box{max-width:560px;text-align:center}
-.code{font:800 5rem/1 "Inter";background:linear-gradient(90deg,#c9a2ff,#5fb8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
-h1{font-size:1.6rem;margin:12px 0 8px}
-p{color:#d9dcf2;margin:0 0 26px}
-.btns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-a{display:inline-block;font-weight:600;padding:11px 18px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.35);color:#fff}
-a.p{background:#fff;color:#140a2e;border-color:#fff}
-small{display:block;margin-top:34px;color:rgba(255,255,255,.5);font-size:.8rem}
-
-/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
-@media (prefers-reduced-motion:no-preference){
-@view-transition{navigation:auto}
-::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
-::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
-}
+.nf{min-height:100svh;display:flex;flex-direction:column}
+.nf .phead-in{flex:1;display:flex;flex-direction:column;justify-content:center;padding-block:40px 80px}
+.code{font:800 clamp(4.5rem,10vw,7rem)/1 var(--sans);letter-spacing:-.04em;background:linear-gradient(90deg,var(--violet),var(--sky));-webkit-background-clip:text;background-clip:text;color:transparent}
+.stamp{margin-top:40px;font-size:.78rem;color:rgba(217,220,242,.55)}
 </style>
 </head>
 <body>
-<div class="box">
-  <div class="code">404</div>
-  <h1>Esta página no existe</h1>
-  <p>Puede que el enlace haya cambiado. Desde aquí puedes regresar a lo importante.</p>
-  <div class="btns">
-    <a class="p" href="/">← Inicio</a>
-    <a href="/recursos/">Recursos</a>
-    <a href="/cv.html">Ver CV</a>
+<header class="phead nf">
+  <div class="topbar">
+    <a class="brand" href="/">Delivery con <span>Charly Brito</span></a>
+    <nav class="navlinks" aria-label="Principal"><a href="/"><span class="es">Inicio</span><span class="en">Home</span></a><a href="/index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="/index.html#linkedin">LinkedIn</a><a href="/recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a></nav>
+    <div class="nav-actions">
+      <button type="button" class="lang" id="lang" lang="en" aria-label="EN · View in English">EN</button>
+      <a class="cta cta-sm cta-light navcv" href="/cv.html"><span class="es">Ver CV</span><span class="en">View CV</span><svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <button type="button" class="burger" id="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu"><span></span></button>
+    </div>
   </div>
-  <small>© 2026 Carlos Alberto Ruiz Brito · Delivery con Charly Brito · Documento elaborado por Carlos Alberto Ruiz Brito · 05/10/2026</small>
-</div>
+  <nav class="menu" id="menu" aria-label="Menú"><a href="/"><span class="es">Inicio</span><span class="en">Home</span></a><a href="/index.html#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a><a href="/index.html#linkedin">LinkedIn</a><a href="/recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a><div class="divider"></div><a class="m-cv" href="/cv.html"><span class="es">Ver CV</span><span class="en">View CV</span><svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></a></nav>
+  <div class="wrap phead-in">
+    <div class="code">404</div>
+    <h1><span class="es">Esta página no existe.</span><span class="en">This page doesn't exist.</span></h1>
+    <p class="lead"><span class="es">Puede que el enlace haya cambiado. Desde aquí puedes regresar a lo importante.</span><span class="en">The link may have changed. From here you can get back to what matters.</span></p>
+    <div class="ctas">
+      <a class="cta cta-lg cta-light" href="/"><span class="es">Ir al inicio</span><span class="en">Go home</span><svg class="arw" viewBox="0 0 12 10" fill="none" aria-hidden="true"><path d="M0.8 5h10M7.1 1.4 10.9 5l-3.8 3.6" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <a class="cta cta-lg cta-ghost" href="/recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a>
+      <a class="cta cta-lg cta-ghost" href="/cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+    </div>
+    <p class="stamp">© 2026 Carlos Alberto Ruiz Brito · Delivery con Charly Brito · <span class="es">Documento elaborado por Carlos Alberto Ruiz Brito · 05/10/2026 · actualizado 19/10/2026</span><span class="en">Prepared by Carlos Alberto Ruiz Brito · Oct 5, 2026 · updated Oct 19, 2026</span></p>
+  </div>
+</header>
+<script src="/js/cv.js" defer></script>
+<script src="/js/nav.js" defer></script>
 </body>
 </html>
