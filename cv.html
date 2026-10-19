@@ -75,6 +75,14 @@ html[lang="en"] .topnav .es,html:not([lang="en"]) .topnav .en{display:none}
 .topnav .sp{flex:1}.topnav a{white-space:nowrap}
 @media print{.topnav{display:none}}
 @media (max-width:480px){.topnav{padding:8px 12px;gap:4px}.topnav a.tb{font-size:.74rem;line-height:1.15}.topnav a{font-size:.76rem;padding:5px 7px}}
+
+/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+}
+.topnav a.tb{view-transition-name:marca}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="favicon.png">
