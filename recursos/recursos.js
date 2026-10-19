@@ -31,8 +31,8 @@ window.RECURSOS = [
     formato: "Excel",
     idiomas: ["es", "en"],
     url: "tablero-ejecutivo.html",
-    img: "tablero-vista-previa.jpg",
-    img_en: "tablero-vista-previa-en.jpg",
+    img: "tablero-miniatura.jpg",
+    img_en: "tablero-miniatura-en.jpg",
     titulo: { es: "Tablero Ejecutivo de Delivery", en: "Executive Delivery Dashboard" },
     desc: {
       es: "Avance, SPI, SPI(t), CPI, aceptación del cliente y riesgos en una página, con semáforo automático y video de uso. En español e inglés.",
@@ -88,7 +88,7 @@ window.renderRecursos = function (lista, cont, base) {
     var tag = live
       ? '<span class="tag ok"><span class="es">Disponible · ' + esc(r.formato) + idi + '</span><span class="en">Available · ' + esc(r.formato) + idi + '</span></span>'
       : '<span class="tag"><span class="es">En preparación</span><span class="en">Coming soon</span></span>';
-    var im = function (src, cls) { return '<img class="thumb' + cls + '" src="' + base + esc(src) + '" alt="" width="1087" height="1363" loading="lazy">'; };
+    var im = function (src, cls) { return '<img class="thumb' + cls + '" src="' + base + esc(src) + '" alt="" width="600" height="752" loading="lazy">'; };
     var img = !r.img ? '' : (r.img_en ? im(r.img, ' es') + im(r.img_en, ' en') : im(r.img, ''));
     var body = tag + img +
       '<span class="topic"><span class="es">' + esc(tema.es) + '</span><span class="en">' + esc(tema.en) + '</span></span>' +

@@ -83,7 +83,7 @@ footer .legal{width:100%;font-size:.78rem}
 ::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
 }
 .brand{view-transition-name:marca}
-.thumb[src$="tablero-vista-previa.jpg"],.thumb[src$="tablero-vista-previa-en.jpg"]{view-transition-name:tablero}
+.thumb[src$="tablero-miniatura.jpg"],.thumb[src$="tablero-miniatura-en.jpg"],.thumb[src$="tablero-vista-previa.jpg"],.thumb[src$="tablero-vista-previa-en.jpg"]{view-transition-name:tablero}
 
 /* Navegación única del sitio: página actual marcada */
 .navlinks a[aria-current]{color:#fff;box-shadow:inset 0 -2px 0 var(--mint);border-radius:6px 6px 0 0}
@@ -104,7 +104,8 @@ footer .legal{width:100%;font-size:.78rem}
 .feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
 .feat .thumb{height:210px}
 .soon{background:var(--surface);border:1px dashed var(--line);border-radius:12px;padding:18px 18px 6px}
-.soon h3{margin:0 0 2px;font-size:.98rem}
+.soon h2{margin:0 0 2px;font-size:.98rem}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 .soon .note{margin:0 0 8px;font-size:.84rem;color:var(--muted)}
 .soon ul{list-style:none;margin:0;padding:0}
 .soon li{padding:12px 0;border-top:1px solid var(--line);display:grid;gap:2px}
@@ -139,9 +140,10 @@ a,button{touch-action:manipulation}
 <main class="wrap" id="contenido" tabindex="-1">
   <div class="filters" id="filtros" role="group" aria-label="Filtrar por tema" hidden></div>
   <p class="count" id="conteo"></p>
+  <h2 class="vh"><span class="es">Recursos disponibles</span><span class="en">Available resources</span></h2>
   <div class="resgrid">
     <div class="feat" id="catalogo"></div>
-    <aside class="soon" id="prox" aria-labelledby="proxT"><h3 id="proxT"><span class="es">En preparación</span><span class="en">Coming soon</span></h3><p class="note"><span class="es">Se publican junto con su serie en LinkedIn.</span><span class="en">Released together with their LinkedIn series.</span></p><ul id="proxList"></ul></aside>
+    <aside class="soon" id="prox" aria-labelledby="proxT"><h2 id="proxT"><span class="es">En preparación</span><span class="en">Coming soon</span></h2><p class="note"><span class="es">Se publican junto con su serie en LinkedIn.</span><span class="en">Released together with their LinkedIn series.</span></p><ul id="proxList"></ul></aside>
   </div>
   <noscript><p>Activa JavaScript para ver el catálogo, o abre <a href="tablero-ejecutivo.html">Tablero Ejecutivo de Delivery</a>.</p></noscript>
   <p class="lic"><span class="es">Los recursos se publican con licencia CC BY 4.0: puedes usarlos y adaptarlos, incluso con fines comerciales, citando a Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com.</span><span class="en">Resources are published under CC BY 4.0: use and adapt them, even commercially, with credit to Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com.</span></p>
