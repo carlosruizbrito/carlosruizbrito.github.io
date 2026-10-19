@@ -146,6 +146,20 @@ details.older article::before{left:-32px}
 }
 @media (max-width:900px){.herogrid,.together{grid-template-columns:minmax(0,1fr)}.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpis .kpi:first-child{grid-column:1/-1}.pillars{grid-template-columns:repeat(2,minmax(0,1fr))}.tools,.posts,.wins{grid-template-columns:minmax(0,1fr)}.navlinks a{display:none}}
 @media (max-width:480px){.pillars{grid-template-columns:minmax(0,1fr)}}
+
+/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+}
+.brand{view-transition-name:marca}
+.thumb[src$="tablero-vista-previa.jpg"]{view-transition-name:tablero}
+/* Aparición de secciones al hacer scroll (solo con JS y sin "reducir movimiento") */
+@media (prefers-reduced-motion:no-preference){
+html.rv .sec{opacity:0;transform:translateY(12px);transition:opacity .45s ease,transform .45s ease}
+html.rv .sec.vis{opacity:1;transform:none}
+}
 </style>
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="favicon.png">
