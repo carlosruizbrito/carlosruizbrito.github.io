@@ -84,6 +84,15 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
 .navlinks a{white-space:nowrap}
 @media (max-width:900px){.top,.grid,.q{grid-template-columns:minmax(0,1fr)}.shot img{height:240px}}
 .langnote{font-size:.82rem;color:var(--muted);margin:10px 0 0}
+
+/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+}
+.brand{view-transition-name:marca}
+.shot{view-transition-name:tablero}
 </style>
 </head>
 <body>
