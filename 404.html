@@ -23,6 +23,13 @@ p{color:#d9dcf2;margin:0 0 26px}
 a{display:inline-block;font-weight:600;padding:11px 18px;border-radius:8px;text-decoration:none;border:1px solid rgba(255,255,255,.35);color:#fff}
 a.p{background:#fff;color:#140a2e;border-color:#fff}
 small{display:block;margin-top:34px;color:rgba(255,255,255,.5);font-size:.8rem}
+
+/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+}
 </style>
 </head>
 <body>

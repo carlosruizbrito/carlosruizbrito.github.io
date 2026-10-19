@@ -70,6 +70,15 @@ footer .wrap{padding-block:24px;display:flex;flex-wrap:wrap;gap:12px 24px;justif
 @media (max-width:900px){.tools{grid-template-columns:minmax(0,1fr)}}
 @media (max-width:480px){.brand{font-size:.9rem}.navlinks{gap:4px}.navlinks a,.lang{padding:6px 8px;font-size:.8rem}}
 .navlinks a{white-space:nowrap}
+
+/* Transiciones entre páginas (View Transitions) · respeta "reducir movimiento" */
+@media (prefers-reduced-motion:no-preference){
+@view-transition{navigation:auto}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.28s}
+::view-transition-group(marca),::view-transition-group(tablero){animation-duration:.38s;animation-timing-function:cubic-bezier(.2,.7,.2,1)}
+}
+.brand{view-transition-name:marca}
+.thumb[src$="tablero-vista-previa.jpg"]{view-transition-name:tablero}
 </style>
 </head>
 <body>
