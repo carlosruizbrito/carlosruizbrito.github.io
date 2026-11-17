@@ -48,31 +48,23 @@ a{color:var(--accent);text-underline-offset:3px}
 @media (max-width:860px){.top nav{display:none}.top .col{gap:12px}.lang{margin-left:auto}}
 
 /* Portada */
-.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;min-height:min(760px,92vh);display:flex;align-items:center}
-.hero .shot{position:absolute;top:0;right:0;bottom:0;width:58%;margin:0}
-.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%),linear-gradient(0deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 38%);}
-.hero .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 0,transparent 28%)}
-.hero .col{position:relative;width:100%;padding-top:72px;padding-bottom:80px}
-.copy{max-width:620px}
-.who{margin:0 0 26px;color:#d9d3f2;font-size:1rem;letter-spacing:.01em}
-.who b{color:#fff;font-weight:600}
-.hero h1{margin:0;font-weight:800;font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.04em;text-wrap:balance}
-.hero h1 .then{display:block;margin-top:.18em;color:var(--violet)}
-.lede{max-width:33em;margin:28px 0 0;font-size:1.13rem;line-height:1.6;color:#e6e1f7}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;padding:88px 0 96px}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero .col{position:relative}
+.copy{max-width:880px}
+.who{display:flex;align-items:center;gap:18px;margin:0 0 40px}
+.who img{width:88px;height:88px;border-radius:18px;object-fit:cover;display:block}
+.who b{display:block;color:#fff;font-weight:700;font-size:1.15rem;letter-spacing:-.01em}
+.who span{color:#b9b1d9;font-size:.98rem}
+.hero h1{margin:0;font-weight:800;font-size:clamp(2.3rem,5vw,4.1rem);line-height:1.06;letter-spacing:-.04em;max-width:16em;text-wrap:balance}
+.lede{max-width:36em;margin:28px 0 0;font-size:1.15rem;line-height:1.6;color:#e6e1f7}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--sans);padding:12px 22px;border-radius:999px;text-decoration:none}
 .btn-light{background:#fff;color:var(--ink)}
 .btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
-.facts{margin:44px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 28px;color:#b9b1d9;font-size:.92rem;list-style:none;max-width:560px}
+.facts{margin:48px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 32px;color:#b9b1d9;font-size:.95rem;list-style:none}
 .facts b{color:#fff;font-weight:600}
-@media (max-width:1180px) and (min-width:901px){.hero .shot{width:46%}.copy{max-width:500px}.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem)}}
-@media (max-width:900px){
-  .hero{display:block;min-height:0}
-  .hero .shot{position:relative;width:100%;height:420px}
-  .hero .shot img{-webkit-mask-image:none;mask-image:none;object-position:50% 25%}
-  .hero .shot::after{background:linear-gradient(0deg,var(--ink) 0,transparent 45%)}
-  .hero .col{margin-top:-120px;padding-top:0;padding-bottom:56px}
-}
+@media (max-width:700px){.hero{padding:48px 0 64px}.who img{width:72px;height:72px;border-radius:16px}.who{margin-bottom:28px}}
 /* Secciones */
 section.block{padding-top:96px}
 .head{max-width:54rem;margin-bottom:40px}
@@ -219,11 +211,10 @@ details[open] summary::before{content:"−"}
 
 <main id="contenido" tabindex="-1">
 <section class="hero" aria-labelledby="titulo">
-  <figure class="shot"><img src="retrato.jpg" alt="Carlos Alberto Ruiz Brito" width="1000" height="1000"></figure>
   <div class="col">
     <div class="copy">
-      <p class="who"><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager</p>
-      <h1 id="titulo"><span class="es">Una cuenta de USD 3.4M hoy es de USD 12M. <span class="then">Empezó con una decisión.</span></span><span class="en">A USD 3.4M account is now USD 12M. <span class="then">It started with one decision.</span></span></h1>
+      <div class="who"><img src="../foto-carlos.jpg" alt="Carlos Alberto Ruiz Brito" width="88" height="88"><div><b>Carlos Alberto Ruiz Brito</b><span>Senior Delivery Manager</span></div></div>
+      <h1 id="titulo"><span class="es">Hice crecer una cuenta de USD&nbsp;3.4M a USD&nbsp;12M.</span><span class="en">I grew an account from USD&nbsp;3.4M to USD&nbsp;12M.</span></h1>
       <p class="lede"><span class="es">Detecté que la infraestructura del cliente necesitaba renovarse, propuse cómo hacerlo y la cuenta pasó de 12 a 40 sitios. Aquí cuento cómo tomo ese tipo de decisiones.</span><span class="en">I saw that the client's infrastructure needed renewing, proposed how to do it, and the account grew from 12 to 40 sites. Here is how I make that kind of call.</span></p>
       <div class="actions">
         <a class="btn btn-light" href="#historias"><span class="es">Leer las historias</span><span class="en">Read the stories</span></a>
