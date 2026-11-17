@@ -48,40 +48,31 @@ a{color:var(--accent);text-underline-offset:3px}
 @media (max-width:860px){.top nav{display:none}.top .col{gap:12px}.lang{margin-left:auto}}
 
 /* Portada */
-.hero{background:var(--ink);color:#fff;padding:56px 0 88px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
-.hero .col{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center;position:relative}
-.who{display:flex;align-items:center;gap:12px;margin:0 0 36px;color:#d9d3f2;font-size:.95rem}
-.who img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.25)}
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden;min-height:min(760px,92vh);display:flex;align-items:center}
+.hero .shot{position:absolute;top:0;right:0;bottom:0;width:58%;margin:0}
+.hero .shot img{width:100%;height:100%;object-fit:cover;object-position:50% 22%;display:block;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 38%),linear-gradient(0deg,transparent 0,#000 22%);mask-image:linear-gradient(90deg,transparent 0,#000 38%);}
+.hero .shot::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--ink) 0,transparent 28%)}
+.hero .col{position:relative;width:100%;padding-top:72px;padding-bottom:80px}
+.copy{max-width:620px}
+.who{margin:0 0 26px;color:#d9d3f2;font-size:1rem;letter-spacing:.01em}
 .who b{color:#fff;font-weight:600}
-.hero h1{margin:0;font-weight:800;font-size:clamp(2.9rem,7.2vw,5.6rem);line-height:.98;letter-spacing:-.045em}
-.hero h1 .num{font-family:var(--sans);font-variant-numeric:tabular-nums}
-.hero h1 .to{display:block;color:var(--mint)}
-.lede{max-width:34em;margin:28px 0 0;font-size:1.15rem;line-height:1.55;color:#e6e1f7}
-.lede-2{max-width:34em;margin:14px 0 0;color:#b9b1d9}
+.hero h1{margin:0;font-weight:800;font-size:clamp(2.4rem,5.4vw,4.3rem);line-height:1.04;letter-spacing:-.04em;text-wrap:balance}
+.hero h1 .then{display:block;margin-top:.18em;color:var(--violet)}
+.lede{max-width:33em;margin:28px 0 0;font-size:1.13rem;line-height:1.6;color:#e6e1f7}
 .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
 .btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--sans);padding:12px 22px;border-radius:999px;text-decoration:none}
 .btn-light{background:#fff;color:var(--ink)}
 .btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
-.facts{margin:40px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:8px 28px;color:#b9b1d9;font-size:.92rem;list-style:none}
+.facts{margin:44px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 28px;color:#b9b1d9;font-size:.92rem;list-style:none;max-width:560px}
 .facts b{color:#fff;font-weight:600}
-
-/* Cuadrícula de 40 sitios */
-.sites{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px}
-.sites h2{margin:0 0 4px;font-size:1rem;font-weight:600;color:#fff}
-.sites p{margin:0 0 20px;color:#b9b1d9;font-size:.88rem}
-.grid40{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
-.grid40 i{aspect-ratio:1;border-radius:5px;background:var(--purple);display:block}
-.grid40 i.n{background:var(--mint);animation:on .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.6s + var(--d) * 55ms)}
-@keyframes on{from{background:rgba(255,255,255,.08);transform:scale(.6)}to{background:var(--mint);transform:scale(1)}}
-@media (prefers-reduced-motion:reduce){.grid40 i.n{animation:none}}
-.legend{display:flex;gap:18px;margin-top:18px;font-size:.84rem;color:#d9d3f2;flex-wrap:wrap}
-.legend span{display:inline-flex;align-items:center;gap:8px}
-.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.money{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.84rem;color:#b9b1d9}
-.money b{font-family:var(--mono);font-weight:500;color:#fff;font-size:1rem}
-@media (max-width:900px){.hero .col{grid-template-columns:1fr;gap:44px}.hero{padding:40px 0 64px}}
-
+@media (max-width:1180px) and (min-width:901px){.hero .shot{width:46%}.copy{max-width:500px}.hero h1{font-size:clamp(2.3rem,4.6vw,3.6rem)}}
+@media (max-width:900px){
+  .hero{display:block;min-height:0}
+  .hero .shot{position:relative;width:100%;height:420px}
+  .hero .shot img{-webkit-mask-image:none;mask-image:none;object-position:50% 25%}
+  .hero .shot::after{background:linear-gradient(0deg,var(--ink) 0,transparent 45%)}
+  .hero .col{margin-top:-120px;padding-top:0;padding-bottom:56px}
+}
 /* Secciones */
 section.block{padding-top:96px}
 .head{max-width:54rem;margin-bottom:40px}
@@ -228,12 +219,12 @@ details[open] summary::before{content:"−"}
 
 <main id="contenido" tabindex="-1">
 <section class="hero" aria-labelledby="titulo">
+  <figure class="shot"><img src="retrato.jpg" alt="Carlos Alberto Ruiz Brito" width="1000" height="1000"></figure>
   <div class="col">
-    <div>
-      <p class="who"><img src="../foto-carlos.jpg" alt="" width="44" height="44"><span><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager</span></p>
-      <h1 id="titulo"><span class="es">De <span class="num">USD 3.4M</span> <span class="to">a <span class="num">USD 12M</span>.</span></span><span class="en">From <span class="num">USD 3.4M</span> <span class="to">to <span class="num">USD 12M</span>.</span></span></h1>
-      <p class="lede"><span class="es">Es la cuenta que dirijo hoy. Pasó de 12 a 40 sitios cuando detecté que la infraestructura del cliente necesitaba renovarse y propuse cómo hacerlo.</span><span class="en">That's the account I lead today. It grew from 12 to 40 sites after I saw that the client's infrastructure needed renewing and proposed how to do it.</span></p>
-      <p class="lede-2"><span class="es">Esta página cuenta cómo tomo ese tipo de decisiones.</span><span class="en">This page is about how I make that kind of call.</span></p>
+    <div class="copy">
+      <p class="who"><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager</p>
+      <h1 id="titulo"><span class="es">Una cuenta de USD 3.4M hoy es de USD 12M. <span class="then">Empezó con una decisión.</span></span><span class="en">A USD 3.4M account is now USD 12M. <span class="then">It started with one decision.</span></span></h1>
+      <p class="lede"><span class="es">Detecté que la infraestructura del cliente necesitaba renovarse, propuse cómo hacerlo y la cuenta pasó de 12 a 40 sitios. Aquí cuento cómo tomo ese tipo de decisiones.</span><span class="en">I saw that the client's infrastructure needed renewing, proposed how to do it, and the account grew from 12 to 40 sites. Here is how I make that kind of call.</span></p>
       <div class="actions">
         <a class="btn btn-light" href="#historias"><span class="es">Leer las historias</span><span class="en">Read the stories</span></a>
         <a class="btn btn-line" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
@@ -244,19 +235,6 @@ details[open] summary::before{content:"−"}
         <li><b>40+</b> <span class="es">personas por programa</span><span class="en">people per program</span></li>
         <li><span class="es">Equipos en</span><span class="en">Teams in</span> <b>6 <span class="es">países</span><span class="en">countries</span></b></li>
       </ul>
-    </div>
-    <div class="sites" role="img" aria-label="12 sitios originales y 28 sitios nuevos, 40 en total / 12 original sites and 28 new sites, 40 in total">
-      <h2><span class="es">Sitios de la cuenta</span><span class="en">Sites in the account</span></h2>
-      <p><span class="es">Infraestructura crítica en operación 24x7, sector industrial.</span><span class="en">Critical infrastructure in 24x7 operation, industrial sector.</span></p>
-      <div class="grid40" aria-hidden="true">
-        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-        <i></i><i></i><i></i><i></i><i class="n" style="--d:0"></i><i class="n" style="--d:1"></i><i class="n" style="--d:2"></i><i class="n" style="--d:3"></i>
-        <i class="n" style="--d:4"></i><i class="n" style="--d:5"></i><i class="n" style="--d:6"></i><i class="n" style="--d:7"></i><i class="n" style="--d:8"></i><i class="n" style="--d:9"></i><i class="n" style="--d:10"></i><i class="n" style="--d:11"></i>
-        <i class="n" style="--d:12"></i><i class="n" style="--d:13"></i><i class="n" style="--d:14"></i><i class="n" style="--d:15"></i><i class="n" style="--d:16"></i><i class="n" style="--d:17"></i><i class="n" style="--d:18"></i><i class="n" style="--d:19"></i>
-        <i class="n" style="--d:20"></i><i class="n" style="--d:21"></i><i class="n" style="--d:22"></i><i class="n" style="--d:23"></i><i class="n" style="--d:24"></i><i class="n" style="--d:25"></i><i class="n" style="--d:26"></i><i class="n" style="--d:27"></i>
-      </div>
-      <div class="legend"><span><i style="background:#6A0DAD"></i><span class="es">12 al inicio</span><span class="en">12 at the start</span></span><span><i style="background:#7fd8cf"></i><span class="es">28 nuevos</span><span class="en">28 new</span></span></div>
-      <div class="money"><span><span class="es">Presupuesto de la cuenta</span><span class="en">Account budget</span></span><b>3.4M → 12M</b></div>
     </div>
   </div>
 </section>
