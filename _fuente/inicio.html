@@ -182,6 +182,18 @@ details[open] summary::before{content:"−"}
 .more footer b{color:var(--fg);font-weight:600}
 @media (max-width:760px){.more{grid-template-columns:1fr}}
 
+/* Quién soy */
+.about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start}
+.bio p{margin:0 0 16px;font-size:1.1rem;line-height:1.65;max-width:34em}
+.bio .cvrow{margin-top:26px}
+.keys{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 24px}
+.keys div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
+.keys div:first-child{border-top:0}
+.keys dt{color:var(--muted);font-size:.9rem}
+.keys dd{margin:0;font-size:.97rem}
+h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
+@media (max-width:900px){.about{grid-template-columns:1fr;gap:32px}.keys div{grid-template-columns:1fr;gap:2px}}
+
 /* Trayectoria */
 .path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
 .path::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
@@ -197,8 +209,6 @@ details[open] summary::before{content:"−"}
   .path li{padding:0 0 26px 36px}
   .path li::before{top:4px}
 }
-.creds{margin:44px 0 0;color:var(--muted);max-width:52rem}
-.creds b{color:var(--fg);font-weight:600}
 .cvrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
 .btn-dark{background:var(--ink);color:#fff}
 .btn-out{border:1px solid var(--line);color:var(--fg);background:var(--surface)}
@@ -221,9 +231,9 @@ details[open] summary::before{content:"−"}
   <div class="col">
     <a class="brand" href="./">Delivery con <span>Charly Brito</span></a>
     <nav aria-label="Principal">
+      <a href="#quien"><span class="es">Quién soy</span><span class="en">About</span></a>
       <a href="#historias"><span class="es">Historias</span><span class="en">Stories</span></a>
       <a href="#construyo"><span class="es">Lo que construyo</span><span class="en">What I build</span></a>
-      <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
       <a href="{R}recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a>
     </nav>
     <a class="lang" href="{OTHER}" hreflang="{OTHER_LANG}" lang="{OTHER_LANG}"><span class="es">EN</span><span class="en">ES</span></a>
@@ -231,9 +241,9 @@ details[open] summary::before{content:"−"}
     <a class="cvlink" href="{R}cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
   </div>
   <nav class="menu" id="menu" aria-label="Menú">
+    <a href="#quien"><span class="es">Quién soy</span><span class="en">About</span></a>
     <a href="#historias"><span class="es">Historias</span><span class="en">Stories</span></a>
     <a href="#construyo"><span class="es">Lo que construyo</span><span class="en">What I build</span></a>
-    <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
     <a href="{R}recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a>
     <a href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener">LinkedIn</a>
   </nav>
@@ -247,7 +257,7 @@ details[open] summary::before{content:"−"}
       <h1 id="titulo"><span class="es">Hice crecer una cuenta de USD&nbsp;3.4M a USD&nbsp;12M.</span><span class="en">I grew an account from USD&nbsp;3.4M to USD&nbsp;12M.</span></h1>
       <p class="lede"><span class="es">Detecté que la infraestructura del cliente necesitaba renovarse, propuse cómo hacerlo y la cuenta pasó de 12 a 40 sitios. Aquí cuento cómo tomo ese tipo de decisiones.</span><span class="en">I saw that the client's infrastructure needed renewing, proposed how to do it, and the account grew from 12 to 40 sites. Here is how I make that kind of call.</span></p>
       <div class="actions">
-        <a class="btn btn-light" href="#historias"><span class="es">Leer las historias</span><span class="en">Read the stories</span></a>
+        <a class="btn btn-light" href="#quien"><span class="es">Conóceme</span><span class="en">About me</span></a>
         <a class="btn btn-line" href="{R}cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
       </div>
       <ul class="facts">
@@ -264,6 +274,37 @@ details[open] summary::before{content:"−"}
   <div class="col">
     <p class="pov-t"><span class="es">Los proyectos críticos se pierden por los riesgos que nadie vio a tiempo. Mi trabajo es verlos primero.</span><span class="en">Critical projects are lost to the risks nobody saw in time. My job is to see them first.</span></p>
   </div>
+</section>
+
+<section class="block col" id="quien" aria-labelledby="h-quien">
+  <div class="head"><h2 id="h-quien"><span class="es">Quién soy</span><span class="en">Who I am</span></h2></div>
+  <div class="about">
+    <div class="bio">
+      <p><span class="es">Soy Senior Delivery Manager en Ciudad de México y llevo 15 años en TI. Empecé como analista de sistemas, pasé por banca y consultoría, y hoy dirijo un portafolio de infraestructura crítica y Disaster Recovery con más de 20 personas, en operación 24x7.</span><span class="en">I'm a Senior Delivery Manager based in Mexico City with 15 years in IT. I started as a systems analyst, worked in banking and consulting, and today I lead a critical infrastructure and Disaster Recovery portfolio with 20+ people, running 24x7.</span></p>
+      <p><span class="es">Combino gobierno de entrega (alcance, presupuesto, riesgos y aceptación del cliente) con IA aplicada, siempre con revisión humana. Desde 2018 también doy clases de TI en la Universidad Insurgentes.</span><span class="en">I combine delivery governance (scope, budget, risk and client acceptance) with applied AI, always with human review. Since 2018 I have also taught IT at Universidad Insurgentes.</span></p>
+      <div class="cvrow">
+          <a class="btn btn-dark" href="{R}cv.html"><span class="es">Ver CV completo</span><span class="en">View full CV</span></a>
+          <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf"><span class="es">Descargar PDF (ES)</span><span class="en">Download PDF (ES)</span></a>
+          <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf"><span class="es">Descargar PDF (EN)</span><span class="en">Download PDF (EN)</span></a>
+        </div>
+    </div>
+    <dl class="keys">
+      <div><dt><span class="es">Hoy</span><span class="en">Now</span></dt><dd><span class="es">Senior Delivery Manager · infraestructura crítica y DR</span><span class="en">Senior Delivery Manager · critical infrastructure and DR</span></dd></div>
+      <div><dt><span class="es">Experiencia en</span><span class="en">Experience with</span></dt><dd>Globant · Santander · Banorte · CitiBanamex · AB InBev</dd></div>
+      <div><dt><span class="es">Sectores</span><span class="en">Industries</span></dt><dd><span class="es">Banca, retail, farma, automotriz, educación e industria</span><span class="en">Banking, retail, pharma, automotive, education and industry</span></dd></div>
+      <div><dt><span class="es">Formación</span><span class="en">Education</span></dt><dd><span class="es">Maestría en Administración de Negocios (MBA) e Ingeniería en Sistemas Computacionales, UNITEC</span><span class="en">MBA and Computer Systems Engineering, UNITEC</span></dd></div>
+      <div><dt><span class="es">Certificaciones</span><span class="en">Certifications</span></dt><dd>SAFe® 6 POPM · Certified ScrumMaster® · Management 3.0 · ITIL Foundations</dd></div>
+      <div><dt><span class="es">Idiomas</span><span class="en">Languages</span></dt><dd><span class="es">Español nativo · inglés intermedio-profesional</span><span class="en">Spanish (native) · English (professional working)</span></dd></div>
+      <div><dt><span class="es">Base</span><span class="en">Based in</span></dt><dd><span class="es">Ciudad de México · equipos en 6 países</span><span class="en">Mexico City · teams in 6 countries</span></dd></div>
+    </dl>
+  </div>
+  <h3 class="sub"><span class="es">Trayectoria</span><span class="en">Career</span></h3>
+  <ol class="path">
+    <li><span class="y">2012</span><b><span class="es">Analista de sistemas</span><span class="en">Systems analyst</span></b><span class="d"><span class="es">Procesos de negocio y automatización; después, banca en Banorte.</span><span class="en">Business processes and automation; then banking at Banorte.</span></span></li>
+    <li><span class="y">2018</span><b>Project Manager</b><span class="d"><span class="es">SAP Security para más de 10,000 usuarios y proyectos regulatorios en banca.</span><span class="en">SAP Security for 10,000+ users and regulatory projects in banking.</span></span></li>
+    <li><span class="y">2020</span><b>Project Manager SR · Globant</b><span class="d"><span class="es">Programas de 40+ personas, hasta 4 clientes simultáneos y +25% de NPS en una super app bancaria.</span><span class="en">Programs of 40+ people, up to 4 clients at a time and +25% NPS on a banking super app.</span></span></li>
+    <li><span class="y">2025</span><b>Senior Delivery Manager</b><span class="d"><span class="es">Infraestructura crítica y DR en operación 24x7, más de 20 personas y desviación menor al 5%.</span><span class="en">Critical infrastructure and DR in 24x7 operation, 20+ people and under 5% deviation.</span></span></li>
+  </ol>
 </section>
 
 <section class="block col" id="historias" aria-labelledby="h-historias">
@@ -419,24 +460,6 @@ details[open] summary::before{content:"−"}
   <p><a href="https://www.linkedin.com/in/carlosruizb/details/recommendations/" target="_blank" rel="noopener"><span class="es">Leer las recomendaciones completas en LinkedIn</span><span class="en">Read the full recommendations on LinkedIn</span></a></p>
 </section>
 
-<section class="block col" id="trayectoria" aria-labelledby="h-tray">
-  <div class="head">
-    <h2 id="h-tray"><span class="es">15 años, de analista a Senior Delivery Manager</span><span class="en">15 years, from analyst to Senior Delivery Manager</span></h2>
-    <p><span class="es">Banca, retail, farma, automotriz, educación e industria, con equipos en México, Argentina, Chile, Colombia, Ecuador y España.</span><span class="en">Banking, retail, pharma, automotive, education and industry, with teams in Mexico, Argentina, Chile, Colombia, Ecuador and Spain.</span></p>
-  </div>
-  <ol class="path">
-    <li><span class="y">2012</span><b><span class="es">Analista de sistemas</span><span class="en">Systems analyst</span></b><span class="d"><span class="es">Procesos de negocio y automatización; después, banca en Banorte.</span><span class="en">Business processes and automation; then banking at Banorte.</span></span></li>
-    <li><span class="y">2018</span><b>Project Manager</b><span class="d"><span class="es">SAP Security para más de 10,000 usuarios y proyectos regulatorios en banca.</span><span class="en">SAP Security for 10,000+ users and regulatory projects in banking.</span></span></li>
-    <li><span class="y">2020</span><b>Project Manager SR · Globant</b><span class="d"><span class="es">Programas de 40+ personas, hasta 4 clientes simultáneos y +25% de NPS en una super app bancaria.</span><span class="en">Programs of 40+ people, up to 4 clients at a time and +25% NPS on a banking super app.</span></span></li>
-    <li><span class="y">2025</span><b>Senior Delivery Manager</b><span class="d"><span class="es">Infraestructura crítica y DR en operación 24x7, más de 20 personas y desviación menor al 5%.</span><span class="en">Critical infrastructure and DR in 24x7 operation, 20+ people and under 5% deviation.</span></span></li>
-  </ol>
-  <p class="creds"><b><span class="es">Formación:</span><span class="en">Education:</span></b> <span class="es">Maestría en Administración de Negocios (MBA) e Ingeniería en Sistemas Computacionales, UNITEC.</span><span class="en">Master of Business Administration (MBA) and Computer Systems Engineering, UNITEC.</span> <b><span class="es">Certificaciones:</span><span class="en">Certifications:</span></b> SAFe® 6 POPM, Certified ScrumMaster®, Management 3.0, ITIL Foundations.</p>
-  <div class="cvrow">
-    <a class="btn btn-dark" href="{R}cv.html"><span class="es">Ver CV completo</span><span class="en">View full CV</span></a>
-    <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf"><span class="es">Descargar PDF (ES)</span><span class="en">Download PDF (ES)</span></a>
-    <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf"><span class="es">Descargar PDF (EN)</span><span class="en">Download PDF (EN)</span></a>
-  </div>
-</section>
 </main>
 
 <footer class="foot">
