@@ -1,0 +1,12 @@
+# © Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com · 17/11/2026
+# Archivos del sistema que no deben subirse al sitio
+.DS_Store
+._*
+Thumbs.db
+desktop.ini
+~$*
+*.tmp
+*.bak
+.vscode/
+.idea/
+node_modules/
