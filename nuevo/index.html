@@ -1,0 +1,454 @@
+<!doctype html>
+<!-- © Carlos Alberto Ruiz Brito · Delivery con Charly Brito · carlosruizbrito.com · 17/11/2026 · actualizado 17/11/2026 -->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#140a2e">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Alberto Ruiz Brito · Senior Delivery Manager</title>
+<meta name="description" content="Carlos Alberto Ruiz Brito, Senior Delivery Manager: decisiones de entrega en infraestructura crítica, Disaster Recovery y transformación digital.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="../favicon.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
+<style>
+:root{
+  --ink:#140a2e;--ink2:#1d1450;--blue:#0b2a4a;--violet:#c9a2ff;--mint:#7fd8cf;--amber:#f0b429;--purple:#6A0DAD;
+  --bg:#f6f5fb;--surface:#fff;--fg:#17142b;--muted:#5d5873;--line:#e2deef;--accent:#6A0DAD;
+  --sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --col:1120px;
+}
+@media (prefers-color-scheme:dark){:root{--bg:#0e0a1f;--surface:#171230;--fg:#ecebf6;--muted:#a8a3c2;--line:#2b2550;--accent:#c9a2ff;color-scheme:dark}}
+*{box-sizing:border-box}
+html[lang="es"] .en,html[lang="en"] .es{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.6 var(--sans);-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px;border-radius:4px}
+.col{max-width:var(--col);margin:0 auto;padding-inline:24px}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--ink);padding:8px 14px;border-radius:8px;z-index:10}
+.skip:focus{left:8px}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* Barra superior */
+.top{background:var(--ink);color:#fff}
+.top .col{display:flex;align-items:center;gap:28px;height:68px}
+.brand{color:#fff;text-decoration:none;font-weight:800;letter-spacing:-.01em;white-space:nowrap}
+.brand span{color:var(--violet)}
+.top nav{display:flex;gap:22px;margin-left:auto}
+.top nav a{color:#d9d3f2;text-decoration:none;font-size:.93rem}
+.top nav a:hover{color:#fff}
+.lang{background:none;border:1px solid rgba(255,255,255,.28);color:#fff;font:500 .8rem var(--mono);padding:6px 10px;border-radius:8px;cursor:pointer}
+.cvlink{color:var(--ink);background:#fff;text-decoration:none;font-weight:600;font-size:.9rem;padding:8px 16px;border-radius:999px;white-space:nowrap}
+@media (max-width:860px){.top nav{display:none}.top .col{gap:12px}.lang{margin-left:auto}}
+
+/* Portada */
+.hero{background:var(--ink);color:#fff;padding:56px 0 88px;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:48px 48px;pointer-events:none}
+.hero .col{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:64px;align-items:center;position:relative}
+.who{display:flex;align-items:center;gap:12px;margin:0 0 36px;color:#d9d3f2;font-size:.95rem}
+.who img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:1px solid rgba(255,255,255,.25)}
+.who b{color:#fff;font-weight:600}
+.hero h1{margin:0;font-weight:800;font-size:clamp(2.9rem,7.2vw,5.6rem);line-height:.98;letter-spacing:-.045em}
+.hero h1 .num{font-family:var(--sans);font-variant-numeric:tabular-nums}
+.hero h1 .to{display:block;color:var(--mint)}
+.lede{max-width:34em;margin:28px 0 0;font-size:1.15rem;line-height:1.55;color:#e6e1f7}
+.lede-2{max-width:34em;margin:14px 0 0;color:#b9b1d9}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:600 .95rem var(--sans);padding:12px 22px;border-radius:999px;text-decoration:none}
+.btn-light{background:#fff;color:var(--ink)}
+.btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
+.facts{margin:40px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.14);display:flex;flex-wrap:wrap;gap:8px 28px;color:#b9b1d9;font-size:.92rem;list-style:none}
+.facts b{color:#fff;font-weight:600}
+
+/* Cuadrícula de 40 sitios */
+.sites{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:26px}
+.sites h2{margin:0 0 4px;font-size:1rem;font-weight:600;color:#fff}
+.sites p{margin:0 0 20px;color:#b9b1d9;font-size:.88rem}
+.grid40{display:grid;grid-template-columns:repeat(8,1fr);gap:8px}
+.grid40 i{aspect-ratio:1;border-radius:5px;background:var(--purple);display:block}
+.grid40 i.n{background:var(--mint);animation:on .5s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(.6s + var(--d) * 55ms)}
+@keyframes on{from{background:rgba(255,255,255,.08);transform:scale(.6)}to{background:var(--mint);transform:scale(1)}}
+@media (prefers-reduced-motion:reduce){.grid40 i.n{animation:none}}
+.legend{display:flex;gap:18px;margin-top:18px;font-size:.84rem;color:#d9d3f2;flex-wrap:wrap}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.money{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);font-size:.84rem;color:#b9b1d9}
+.money b{font-family:var(--mono);font-weight:500;color:#fff;font-size:1rem}
+@media (max-width:900px){.hero .col{grid-template-columns:1fr;gap:44px}.hero{padding:40px 0 64px}}
+
+/* Secciones */
+section.block{padding-top:96px}
+.head{max-width:54rem;margin-bottom:40px}
+.head h2{margin:0;font-size:clamp(1.9rem,4vw,2.75rem);line-height:1.1;letter-spacing:-.03em;font-weight:800}
+.head p{margin:14px 0 0;color:var(--muted);font-size:1.05rem}
+
+/* Historias */
+.story{border-top:1px solid var(--line);display:grid;grid-template-columns:200px minmax(0,1fr);gap:8px 40px;padding:34px 0}
+.story:last-child{border-bottom:1px solid var(--line)}
+.big{font:500 clamp(2.2rem,4.5vw,3.2rem)/1 var(--mono);letter-spacing:-.04em;color:var(--accent)}
+.big.crit{color:var(--fg)}
+.big small{display:block;margin-top:10px;font:400 .8rem var(--sans);letter-spacing:0;color:var(--muted)}
+.story h3{margin:0;font-size:1.45rem;line-height:1.25;letter-spacing:-.02em}
+.story .hook{margin:10px 0 0;font-size:1.06rem;color:var(--fg);max-width:40em}
+.story .ctx{margin:6px 0 0;font-size:.88rem;color:var(--muted)}
+details{margin-top:16px}
+summary{cursor:pointer;font-weight:600;color:var(--accent);list-style:none;display:inline-flex;align-items:center;gap:8px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"+";font:500 1.1rem var(--mono);width:22px;height:22px;border:1px solid currentColor;border-radius:50%;display:inline-grid;place-items:center;line-height:1}
+details[open] summary::before{content:"−"}
+.steps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px 36px;margin-top:20px;max-width:52rem}
+.steps h4{margin:0 0 4px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.steps p{margin:0;font-size:.97rem}
+.steps .lesson{grid-column:1/-1;border-left:3px solid var(--accent);padding:2px 0 2px 16px;font-style:italic}
+@media (max-width:760px){.story{grid-template-columns:1fr}.steps{grid-template-columns:1fr}}
+
+/* Lo que construyo */
+.builds{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+.build{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.stage{background:var(--ink);padding:28px 24px 0;display:flex;justify-content:center;align-items:flex-end;min-height:300px;position:relative}
+.stage .tag{position:absolute;top:14px;right:14px;font:500 .7rem var(--mono);color:#b9b1d9;border:1px solid rgba(255,255,255,.2);padding:3px 8px;border-radius:6px}
+.build .txt{padding:24px 26px 28px}
+.build h3{margin:0;font-size:1.35rem;letter-spacing:-.02em}
+.build p{margin:8px 0 0;color:var(--fg)}
+.build ul{margin:14px 0 0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:8px}
+.build li{font-size:.84rem;color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:4px 10px}
+@media (max-width:860px){.builds{grid-template-columns:1fr}}
+
+/* Maqueta Enfoque (teléfono) */
+.phone{width:236px;background:#0e0a1f;border:1px solid #3a3270;border-bottom:0;border-radius:30px 30px 0 0;padding:16px 14px 0;color:#ecebf6;font-size:11px;line-height:1.35}
+.phone .bar{display:flex;justify-content:space-between;color:#a8a3c2;font:500 9.5px var(--mono);margin-bottom:12px}
+.phone .ttl{font-weight:700;font-size:16px;margin-bottom:10px}
+.phone .card{background:#171230;border:1px solid #2b2550;border-radius:12px;padding:10px;margin-bottom:8px}
+.phone .card b{display:block;font-size:11.5px}
+.phone .card .m{color:#a8a3c2;font-size:10px;margin-top:2px}
+.phone .go{display:inline-block;margin-top:8px;background:#c9a2ff;color:#140a2e;font-weight:700;font-size:10px;padding:5px 10px;border-radius:999px}
+.phone .row{display:flex;align-items:center;gap:8px;padding:6px 0;border-top:1px solid #2b2550;font-size:10.5px}
+.phone .row:first-of-type{border-top:0}
+.phone .row i{width:10px;height:10px;border-radius:3px;border:1px solid #6b6396;flex:none}
+.phone .row i.ok{background:#7fd8cf;border-color:#7fd8cf}
+.phone .habits{display:flex;gap:6px;flex-wrap:wrap;margin-top:2px}
+.phone .habits span{background:#221a48;border-radius:999px;padding:3px 8px;font-size:9.5px;color:#d9d3f2}
+.phone .tabs{display:flex;justify-content:space-around;border-top:1px solid #2b2550;margin:6px -14px 0;padding:9px 0;color:#a8a3c2;font-size:9px}
+.phone .tabs b{color:#c9a2ff;font-weight:600}
+
+/* Maqueta PYGP (escritorio) */
+.desk{width:100%;max-width:440px;background:#f6f5fb;border-radius:10px 10px 0 0;overflow:hidden;color:#17142b;font-size:10.5px;line-height:1.3;display:grid;grid-template-columns:96px 1fr;border:1px solid #3a3270;border-bottom:0}
+.desk .side{background:#1d1450;color:#d9d3f2;padding:12px 10px;display:flex;flex-direction:column;gap:7px}
+.desk .side b{color:#fff;font-size:12px;margin-bottom:4px}
+.desk .side span{padding:3px 6px;border-radius:5px}
+.desk .side span.on{background:#6A0DAD;color:#fff}
+.desk .main{padding:12px}
+.desk .main .t{font-weight:700;font-size:12px;margin-bottom:8px}
+.desk .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:8px}
+.desk .kpi{background:#fff;border:1px solid #e2deef;border-radius:7px;padding:6px}
+.desk .kpi small{display:block;color:#5d5873;font-size:8.5px}
+.desk .kpi b{font:500 14px var(--mono)}
+.desk .kpi.w b{color:#6A0DAD}
+.desk table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e2deef;border-radius:7px;overflow:hidden;font-size:9.5px}
+.desk th{background:#6A0DAD;color:#fff;text-align:left;font-weight:600;padding:5px 6px}
+.desk td{padding:5px 6px;border-top:1px solid #e2deef}
+.desk .dot{display:inline-block;width:7px;height:7px;border-radius:50%;margin-right:4px;vertical-align:middle}
+
+/* En la operación */
+.ops{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:28px;align-items:stretch}
+.ops .note{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:24px 26px}
+.ops .note h3{margin:0;font-size:1.15rem}
+.ops .note p{margin:8px 0 0}
+.console{background:var(--ink);color:#e6e1f7;border-radius:16px;padding:22px 24px;font:400 .9rem/1.75 var(--mono)}
+.console .p{color:var(--mint)}
+.console .ok{color:var(--mint)}
+.console .r{color:var(--violet)}
+@media (max-width:860px){.ops{grid-template-columns:1fr}}
+
+/* Recomendación */
+.quote{margin:0;max-width:52rem}
+.quote p{margin:0;font-size:clamp(1.35rem,2.6vw,1.85rem);line-height:1.4;letter-spacing:-.015em;font-weight:500}
+.quote footer{margin-top:20px;color:var(--muted);font-size:.95rem}
+.quote footer b{color:var(--fg);font-weight:600}
+.more{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;margin-top:44px;padding-top:28px;border-top:1px solid var(--line)}
+.more blockquote{margin:0}
+.more p{margin:0;color:var(--fg)}
+.more footer{margin-top:10px;font-size:.88rem;color:var(--muted)}
+.more footer b{color:var(--fg);font-weight:600}
+@media (max-width:760px){.more{grid-template-columns:1fr}}
+
+/* Trayectoria */
+.path{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:relative}
+.path::before{content:"";position:absolute;left:0;right:0;top:9px;height:2px;background:var(--line)}
+.path li{position:relative;padding:34px 18px 0 0}
+.path li::before{content:"";position:absolute;top:2px;left:0;width:16px;height:16px;border-radius:50%;background:var(--bg);border:2px solid var(--accent)}
+.path li:last-child::before{background:var(--accent)}
+.path .y{font-family:var(--mono);color:var(--accent);font-size:.9rem}
+.path b{display:block;margin-top:4px;font-size:1.05rem;line-height:1.3}
+.path span.d{display:block;margin-top:6px;color:var(--muted);font-size:.9rem}
+@media (max-width:760px){
+  .path{grid-template-columns:1fr}
+  .path::before{left:7px;right:auto;top:0;bottom:0;width:2px;height:auto}
+  .path li{padding:0 0 26px 36px}
+  .path li::before{top:4px}
+}
+.creds{margin:44px 0 0;color:var(--muted);max-width:52rem}
+.creds b{color:var(--fg);font-weight:600}
+.cvrow{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn-dark{background:var(--ink);color:#fff}
+.btn-out{border:1px solid var(--line);color:var(--fg);background:var(--surface)}
+@media (prefers-color-scheme:dark){.btn-dark{background:#fff;color:var(--ink)}}
+
+/* Pie */
+.foot{margin-top:110px;background:var(--ink);color:#d9d3f2;padding:56px 0 40px}
+.foot h2{margin:0;color:#fff;font-size:clamp(1.6rem,3.4vw,2.3rem);letter-spacing:-.03em;max-width:22em;line-height:1.15}
+.foot .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px}
+.foot .links a{color:#fff}.foot .links a.btn-light{color:var(--ink)}
+.foot .btn-line{font-size:.92rem}
+.foot small{display:block;margin-top:48px;color:#8f88b3;font-size:.8rem;line-height:1.5;max-width:60em}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido"><span class="es">Saltar al contenido</span><span class="en">Skip to content</span></a>
+
+<header class="top">
+  <div class="col">
+    <a class="brand" href="./">Delivery con <span>Charly Brito</span></a>
+    <nav aria-label="Principal">
+      <a href="#historias"><span class="es">Historias</span><span class="en">Stories</span></a>
+      <a href="#construyo"><span class="es">Lo que construyo</span><span class="en">What I build</span></a>
+      <a href="#trayectoria"><span class="es">Trayectoria</span><span class="en">Career</span></a>
+      <a href="../recursos/"><span class="es">Recursos</span><span class="en">Resources</span></a>
+    </nav>
+    <button type="button" class="lang" id="lang" lang="en" aria-label="EN · View in English">EN</button>
+    <a class="cvlink" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+  </div>
+</header>
+
+<main id="contenido" tabindex="-1">
+<section class="hero" aria-labelledby="titulo">
+  <div class="col">
+    <div>
+      <p class="who"><img src="../foto-carlos.jpg" alt="" width="44" height="44"><span><b>Carlos Alberto Ruiz Brito</b> · Senior Delivery Manager</span></p>
+      <h1 id="titulo"><span class="es">De <span class="num">USD 3.4M</span> <span class="to">a <span class="num">USD 12M</span>.</span></span><span class="en">From <span class="num">USD 3.4M</span> <span class="to">to <span class="num">USD 12M</span>.</span></span></h1>
+      <p class="lede"><span class="es">Es la cuenta que dirijo hoy. Pasó de 12 a 40 sitios cuando detecté que la infraestructura del cliente necesitaba renovarse y propuse cómo hacerlo.</span><span class="en">That's the account I lead today. It grew from 12 to 40 sites after I saw that the client's infrastructure needed renewing and proposed how to do it.</span></p>
+      <p class="lede-2"><span class="es">Esta página cuenta cómo tomo ese tipo de decisiones.</span><span class="en">This page is about how I make that kind of call.</span></p>
+      <div class="actions">
+        <a class="btn btn-light" href="#historias"><span class="es">Leer las historias</span><span class="en">Read the stories</span></a>
+        <a class="btn btn-line" href="../cv.html"><span class="es">Ver CV</span><span class="en">View CV</span></a>
+      </div>
+      <ul class="facts">
+        <li><b>15 <span class="es">años</span><span class="en">years</span></b> <span class="es">en TI</span><span class="en">in IT</span></li>
+        <li><b>USD 12M+</b> <span class="es">bajo gestión</span><span class="en">under management</span></li>
+        <li><b>40+</b> <span class="es">personas por programa</span><span class="en">people per program</span></li>
+        <li><span class="es">Equipos en</span><span class="en">Teams in</span> <b>6 <span class="es">países</span><span class="en">countries</span></b></li>
+      </ul>
+    </div>
+    <div class="sites" role="img" aria-label="12 sitios originales y 28 sitios nuevos, 40 en total / 12 original sites and 28 new sites, 40 in total">
+      <h2><span class="es">Sitios de la cuenta</span><span class="en">Sites in the account</span></h2>
+      <p><span class="es">Infraestructura crítica en operación 24x7, sector industrial.</span><span class="en">Critical infrastructure in 24x7 operation, industrial sector.</span></p>
+      <div class="grid40" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i class="n" style="--d:0"></i><i class="n" style="--d:1"></i><i class="n" style="--d:2"></i><i class="n" style="--d:3"></i>
+        <i class="n" style="--d:4"></i><i class="n" style="--d:5"></i><i class="n" style="--d:6"></i><i class="n" style="--d:7"></i><i class="n" style="--d:8"></i><i class="n" style="--d:9"></i><i class="n" style="--d:10"></i><i class="n" style="--d:11"></i>
+        <i class="n" style="--d:12"></i><i class="n" style="--d:13"></i><i class="n" style="--d:14"></i><i class="n" style="--d:15"></i><i class="n" style="--d:16"></i><i class="n" style="--d:17"></i><i class="n" style="--d:18"></i><i class="n" style="--d:19"></i>
+        <i class="n" style="--d:20"></i><i class="n" style="--d:21"></i><i class="n" style="--d:22"></i><i class="n" style="--d:23"></i><i class="n" style="--d:24"></i><i class="n" style="--d:25"></i><i class="n" style="--d:26"></i><i class="n" style="--d:27"></i>
+      </div>
+      <div class="legend"><span><i style="background:#6A0DAD"></i><span class="es">12 al inicio</span><span class="en">12 at the start</span></span><span><i style="background:#7fd8cf"></i><span class="es">28 nuevos</span><span class="en">28 new</span></span></div>
+      <div class="money"><span><span class="es">Presupuesto de la cuenta</span><span class="en">Account budget</span></span><b>3.4M → 12M</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="block col" id="historias" aria-labelledby="h-historias">
+  <div class="head">
+    <h2 id="h-historias"><span class="es">Tres decisiones que cambiaron un proyecto</span><span class="en">Three calls that changed a project</span></h2>
+    <p><span class="es">Casos reales, sin nombres de clientes. Toca cada uno para ver cómo lo resolví.</span><span class="en">Real cases, no client names. Open each one to see how I handled it.</span></p>
+  </div>
+
+  <article class="story">
+    <div class="big crit">15 min<small><span class="es">para conmutar toda la operación</span><span class="en">to switch the whole operation</span></small></div>
+    <div>
+      <h3><span class="es">Se cortó la energía en una operación que no puede detenerse</span><span class="en">The power failed in an operation that can't stop</span></h3>
+      <p class="hook"><span class="es">Pasamos toda la operación al sitio de DR en 15 minutos, después de una semana validando que podía sostenerla.</span><span class="en">We moved the entire operation to the DR site in 15 minutes, after a week validating that it could carry the load.</span></p>
+      <p class="ctx"><span class="es">Infraestructura crítica · 24x7</span><span class="en">Critical infrastructure · 24x7</span></p>
+      <details>
+        <summary><span class="es">Cómo lo resolví</span><span class="en">How I handled it</span></summary>
+        <div class="steps">
+          <div><h4><span class="es">Situación</span><span class="en">Situation</span></h4><p><span class="es">Cortes eléctricos repentinos afectaron el sitio principal de una operación industrial 24x7.</span><span class="en">Sudden power outages hit the primary site of a 24x7 industrial operation.</span></p></div>
+          <div><h4><span class="es">Decisión</span><span class="en">Decision</span></h4><p><span class="es">Antes de conmutar, validamos durante una semana que el sitio de DR soportara toda la operación y armamos el plan de trabajo, con reportes continuos a dirección y al cliente. Con su autorización activamos el sitio de DR como principal; coordiné la ejecución en sitio con nuestro especialista de infraestructura.</span><span class="en">Before switching over, we spent a week validating that the DR site could carry the entire operation and built the work plan, with continuous reporting to leadership and the client. With the client's authorization we made the DR site primary; I coordinated on-site execution with our infrastructure specialist.</span></p></div>
+          <div><h4><span class="es">Resultado</span><span class="en">Result</span></h4><p><span class="es">La conmutación tomó 15 minutos. El sitio de DR quedó como principal, con retorno planificado al sitio original.</span><span class="en">The switchover took 15 minutes. The DR site took over as primary, with a planned return to the original site.</span></p></div>
+          <p class="lesson"><span class="es">Un DR sin pruebas es solo teoría. Cuando llegó la contingencia, el plan ya estaba validado y documentado.</span><span class="en">A DR plan without testing is just theory. When the contingency hit, the plan was already validated and documented.</span></p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="big">95%<small><span class="es">entregado cuando el cliente dijo que no</span><span class="en">delivered when the client said no</span></small></div>
+    <div>
+      <h3><span class="es">Las aceptaciones estaban firmadas y el C-level dijo que no era lo que esperaba</span><span class="en">Sign-offs were done and the C-level said it wasn't what they expected</span></h3>
+      <p class="hook"><span class="es">Lo llevamos al 100% en 3 meses, salió a producción y ninguna de las dos partes tuvo pérdidas.</span><span class="en">We took it to 100% in 3 months, it went live and neither party took a loss.</span></p>
+      <p class="ctx"><span class="es">Farmacéutico · Transformación digital</span><span class="en">Pharma · Digital transformation</span></p>
+      <details>
+        <summary><span class="es">Cómo lo resolví</span><span class="en">How I handled it</span></summary>
+        <div class="steps">
+          <div><h4><span class="es">Situación</span><span class="en">Situation</span></h4><p><span class="es">Tras una semana de sesiones diarias medimos la brecha: lo entregado cubría el 60% de lo esperado y el presupuesto ya no alcanzaba para el resto.</span><span class="en">After a week of daily sessions we measured the gap: what we had delivered covered 60% of expectations, and the budget could not cover the rest.</span></p></div>
+          <div><h4><span class="es">Decisión</span><span class="en">Decision</span></h4><p><span class="es">Publicar el MVP ya construido y desarrollar el 40% faltante con el equipo de soporte extendido, reforzado con una adenda: el cliente absorbió el 60% del costo del refuerzo y la empresa el 40%, sin romper la rentabilidad.</span><span class="en">Release the MVP already built and develop the missing 40% with the extended-support team, reinforced through an addendum: the client covered 60% of the added cost and the company 40%, keeping the project profitable.</span></p></div>
+          <div><h4><span class="es">Resultado</span><span class="en">Result</span></h4><p><span class="es">El C-level aceptó el producto final y salió a producción.</span><span class="en">The C-level accepted the final product and it went live.</span></p></div>
+          <p class="lesson"><span class="es">La aceptación de los Product Owners no sustituye la alineación con el sponsor ejecutivo.</span><span class="en">Product Owner sign-off does not replace alignment with the executive sponsor.</span></p>
+        </div>
+      </details>
+    </div>
+  </article>
+
+  <article class="story">
+    <div class="big">3<small><span class="es">opciones, a días de la entrega</span><span class="en">options, days before delivery</span></small></div>
+    <div>
+      <h3><span class="es">El clima frenó una entrega que dependía de imágenes satelitales</span><span class="en">The weather stalled a delivery that depended on satellite imagery</span></h3>
+      <p class="hook"><span class="es">Presenté tres opciones, se aprobó la captura aérea y entregamos completo en la fecha comprometida.</span><span class="en">I laid out three options, aerial capture was approved and we delivered in full on the committed date.</span></p>
+      <p class="ctx"><span class="es">Proyecto geoespacial</span><span class="en">Geospatial project</span></p>
+      <details>
+        <summary><span class="es">Cómo lo resolví</span><span class="en">How I handled it</span></summary>
+        <div class="steps">
+          <div><h4><span class="es">Situación</span><span class="en">Situation</span></h4><p><span class="es">Sin imágenes satelitales útiles no se podía completar el procesamiento en GeoMedia.</span><span class="en">Without usable satellite imagery, the GeoMedia processing could not be completed.</span></p></div>
+          <div><h4><span class="es">Decisión</span><span class="en">Decision</span></h4><p><span class="es">Las opciones: imágenes de archivo (descartada por antigüedad), entregar sin ese paso o capturar nuevas imágenes con aviones equipados con cámaras. Propuse la captura aérea.</span><span class="en">The options: archive imagery (ruled out as too old), deliver without that step, or capture new imagery with camera-equipped aircraft. I recommended aerial capture.</span></p></div>
+          <div><h4><span class="es">Resultado</span><span class="en">Result</span></h4><p><span class="es">Proyecto completo en la fecha comprometida.</span><span class="en">Complete project on the committed date.</span></p></div>
+          <p class="lesson"><span class="es">Los riesgos fuera de nuestro control se anticipan: tener opciones listas a tiempo es lo que permite cumplir la fecha.</span><span class="en">Risks outside our control get anticipated: having options ready in time is what keeps the date.</span></p>
+        </div>
+      </details>
+    </div>
+  </article>
+</section>
+
+<section class="block col" id="construyo" aria-labelledby="h-construyo">
+  <div class="head">
+    <h2 id="h-construyo"><span class="es">Lo que construyo para trabajar mejor</span><span class="en">What I build to work better</span></h2>
+    <p><span class="es">Herramientas propias, hechas con herramientas comerciales de IA. Las imágenes son maquetas con datos ficticios.</span><span class="en">My own tools, built with commercial AI tools. The images are mockups with fictitious data.</span></p>
+  </div>
+  <div class="builds">
+    <article class="build">
+      <div class="stage" aria-hidden="true">
+        <span class="tag"><span class="es">maqueta</span><span class="en">mockup</span></span>
+        <div class="phone">
+          <div class="bar"><span>9:41</span><span>Enfoque</span></div>
+          <div class="ttl">Hoy</div>
+          <div class="card"><b>Bloque de concentración</b><div class="m">10:00 – 11:00 · No molestar</div><span class="go">Iniciar bloque</span></div>
+          <div class="card">
+            <div class="row"><i class="ok"></i>Preparar reporte semanal</div>
+            <div class="row"><i></i>Revisar riesgos del programa</div>
+            <div class="row"><i></i>Plan de prueba de DR</div>
+          </div>
+          <div class="card"><b>Hábitos</b><div class="habits"><span>Gym ✓</span><span>Caminar ✓</span><span>Planear el día</span></div></div>
+          <div class="tabs"><b>Hoy</b><span>Agenda</span><span>Correos</span><span>Buzón</span></div>
+        </div>
+      </div>
+      <div class="txt">
+        <h3>Enfoque</h3>
+        <p><span class="es">App Android nativa para mi operación diaria. Activa «No molestar» durante el bloque de concentración y reúne plan del día, hábitos, agenda y correo de mis cuentas personales.</span><span class="en">A native Android app for my daily operation. It turns on Do Not Disturb during the focus block and brings together my daily plan, habits, calendar and email from my personal accounts.</span></p>
+        <ul>
+          <li><span class="es">Construida con Claude</span><span class="en">Built with Claude</span></li>
+          <li><span class="es">Llave de API y correo de solo lectura</span><span class="en">API key and read-only email</span></li>
+          <li><span class="es">95+ pruebas automatizadas</span><span class="en">95+ automated tests</span></li>
+        </ul>
+      </div>
+    </article>
+    <article class="build">
+      <div class="stage" aria-hidden="true">
+        <span class="tag"><span class="es">maqueta</span><span class="en">mockup</span></span>
+        <div class="desk">
+          <div class="side"><b>PYGP</b><span class="on">Dashboard</span><span>Riesgos</span><span>Incidencias</span><span>Escalamientos</span><span>Gastos de viaje</span><span>Certificaciones</span></div>
+          <div class="main">
+            <div class="t">Dashboard ejecutivo · Demo</div>
+            <div class="kpis">
+              <div class="kpi"><small>Riesgos abiertos</small><b>7</b></div>
+              <div class="kpi w"><small>Escalamientos</small><b>2</b></div>
+              <div class="kpi"><small>Desviación</small><b>3.1%</b></div>
+            </div>
+            <table>
+              <tr><th>Riesgo</th><th>Dueño</th><th>Estado</th></tr>
+              <tr><td>Ventana de cambio</td><td>Infra</td><td><span class="dot" style="background:#7fd8cf"></span>En control</td></tr>
+              <tr><td>Proveedor sin fecha</td><td>PMO</td><td><span class="dot" style="background:#6A0DAD"></span>Seguimiento</td></tr>
+              <tr><td>Licencias</td><td>Compras</td><td><span class="dot" style="background:#7fd8cf"></span>En control</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="txt">
+        <h3>PYGP</h3>
+        <p><span class="es">Plataforma web de gestión de delivery: riesgos, incidencias y escalamientos, gastos de viaje, certificaciones y dashboard ejecutivo, con control de acceso por rol.</span><span class="en">A web platform for delivery management: risks, incidents and escalations, travel expenses, certifications and an executive dashboard, with role-based access.</span></p>
+        <ul>
+          <li><span class="es">Construida con Antigravity y ChatGPT</span><span class="en">Built with Antigravity and ChatGPT</span></li>
+          <li><span class="es">15+ módulos</span><span class="en">15+ modules</span></li>
+          <li><span class="es">18 pruebas E2E en cada compilación</span><span class="en">18 E2E tests on every build</span></li>
+        </ul>
+      </div>
+    </article>
+  </div>
+  <div class="ops">
+    <div class="note">
+      <h3><span class="es">En la operación que dirijo</span><span class="en">In the operation I lead</span></h3>
+      <p><span class="es">Gestiono el agente de IA de primer contacto de una mesa de servicio 24x7: clasifica incidencias, atiende al cliente y entrega al equipo el caso completo. Además, me adapto a las plataformas de IA de cada cliente y a sus políticas de seguridad.</span><span class="en">I manage the first-contact AI agent of a 24x7 service desk: it classifies incidents, engages the client and hands the team a complete case. I also adapt to each client's AI platforms and their security policies.</span></p>
+    </div>
+    <div class="console" aria-label="Cómo uso la IA / How I use AI">
+      <div><span class="p">ia&gt;</span> <span class="es">propone el borrador del reporte semanal</span><span class="en">drafts the weekly report</span></div>
+      <div><span class="p">pm&gt;</span> <span class="es">valida cifras, semáforo y compromisos</span><span class="en">checks figures, status and commitments</span> <span class="ok">✓</span></div>
+      <div><span class="r">regla&gt;</span> <span class="es">la seguridad del cliente va primero: solo herramientas de IA autorizadas por mi organización y cada cliente</span><span class="en">client security comes first: only AI tools approved by my organization and each client</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="block col" id="recomendaciones" aria-labelledby="h-reco">
+  <div class="head"><h2 id="h-reco"><span class="es">Lo que dicen quienes trabajaron conmigo</span><span class="en">What people who worked with me say</span></h2></div>
+  <blockquote class="quote">
+    <p><span class="es">“En todo momento Charly demostró un alto nivel de profesionalismo, responsabilidad y compromiso con los objetivos tanto del equipo como del cliente. […] Destaco especialmente su excelente sinergia con los demás miembros del equipo, su actitud colaborativa y el respeto con el que se relaciona con colegas y stakeholders.”</span><span class="en">“At all times Charly showed a high level of professionalism, responsibility and commitment to the goals of both the team and the client. […] I especially highlight his excellent synergy with the rest of the team, his collaborative attitude and the respect with which he relates to colleagues and stakeholders.”</span></p>
+    <footer><b>Francisco Javier Alvarez</b> · Service Delivery · Portfolio &amp; Operations Leadership · <span class="es">fue su supervisor directo</span><span class="en">his direct manager</span></footer>
+  </blockquote>
+  <div class="more">
+    <blockquote>
+      <p><span class="es">“Siempre se destacó por su liderazgo, sus valiosos aportes, la claridad de sus insights y la solidez de sus análisis. Su atención al detalle es impecable, lo que lo convierte en un profesional confiable y de gran impacto.”</span><span class="en">“He always stood out for his leadership, his valuable contributions, the clarity of his insights and the soundness of his analysis. His attention to detail is impeccable, which makes him a reliable, high-impact professional.”</span></p>
+      <footer><b>Victor Lazo Rengifo</b> · PMP® · <span class="es">trabajó con él en el mismo equipo</span><span class="en">worked with him on the same team</span></footer>
+    </blockquote>
+    <blockquote>
+      <p><span class="es">“Lo que más destaco de él es su lado humano: sabe escuchar, acompaña al equipo y se preocupa genuinamente por las personas, generando un ambiente de confianza y colaboración.”</span><span class="en">“What I value most is his human side: he listens, supports the team and genuinely cares about people, creating an environment of trust and collaboration.”</span></p>
+      <footer><b>Maria Cecilia Galvan</b> · <span class="es">Consultora MM Sr · formó parte de su equipo en Globant</span><span class="en">Senior MM Consultant · was on his team at Globant</span></footer>
+    </blockquote>
+  </div>
+  <p><a href="https://www.linkedin.com/in/carlosruizb/details/recommendations/" target="_blank" rel="noopener"><span class="es">Leer las recomendaciones completas en LinkedIn</span><span class="en">Read the full recommendations on LinkedIn</span></a></p>
+</section>
+
+<section class="block col" id="trayectoria" aria-labelledby="h-tray">
+  <div class="head">
+    <h2 id="h-tray"><span class="es">15 años, de analista a Senior Delivery Manager</span><span class="en">15 years, from analyst to Senior Delivery Manager</span></h2>
+    <p><span class="es">Banca, retail, farma, automotriz, educación e industria, con equipos en México, Argentina, Chile, Colombia, Ecuador y España.</span><span class="en">Banking, retail, pharma, automotive, education and industry, with teams in Mexico, Argentina, Chile, Colombia, Ecuador and Spain.</span></p>
+  </div>
+  <ol class="path">
+    <li><span class="y">2012</span><b><span class="es">Analista de sistemas</span><span class="en">Systems analyst</span></b><span class="d"><span class="es">Procesos de negocio y automatización; después, banca en Banorte.</span><span class="en">Business processes and automation; then banking at Banorte.</span></span></li>
+    <li><span class="y">2018</span><b>Project Manager</b><span class="d"><span class="es">SAP Security para más de 10,000 usuarios y proyectos regulatorios en banca.</span><span class="en">SAP Security for 10,000+ users and regulatory projects in banking.</span></span></li>
+    <li><span class="y">2020</span><b>Project Manager SR · Globant</b><span class="d"><span class="es">Programas de 40+ personas, hasta 4 clientes simultáneos y +25% de NPS en una super app bancaria.</span><span class="en">Programs of 40+ people, up to 4 clients at a time and +25% NPS on a banking super app.</span></span></li>
+    <li><span class="y">2025</span><b>Senior Delivery Manager</b><span class="d"><span class="es">Infraestructura crítica y DR en operación 24x7, más de 20 personas y desviación menor al 5%.</span><span class="en">Critical infrastructure and DR in 24x7 operation, 20+ people and under 5% deviation.</span></span></li>
+  </ol>
+  <p class="creds"><b><span class="es">Formación:</span><span class="en">Education:</span></b> <span class="es">Maestría en Administración de Negocios (MBA) e Ingeniería en Sistemas Computacionales, UNITEC.</span><span class="en">Master of Business Administration (MBA) and Computer Systems Engineering, UNITEC.</span> <b><span class="es">Certificaciones:</span><span class="en">Certifications:</span></b> SAFe® 6 POPM, Certified ScrumMaster®, Management 3.0, ITIL Foundations.</p>
+  <div class="cvrow">
+    <a class="btn btn-dark" href="../cv.html"><span class="es">Ver CV completo</span><span class="en">View full CV</span></a>
+    <a class="btn btn-out" href="../recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf"><span class="es">Descargar PDF (ES)</span><span class="en">Download PDF (ES)</span></a>
+    <a class="btn btn-out" href="../recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf"><span class="es">Descargar PDF (EN)</span><span class="en">Download PDF (EN)</span></a>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="col">
+    <h2><span class="es">Escribo cada semana sobre delivery, riesgos e infraestructura crítica.</span><span class="en">I write every week about delivery, risk and critical infrastructure.</span></h2>
+    <div class="links">
+      <a class="btn btn-light" href="https://www.linkedin.com/in/carlosruizb" target="_blank" rel="noopener"><span class="es">Leer en LinkedIn</span><span class="en">Read on LinkedIn</span></a>
+      <a class="btn btn-line" href="../recursos/"><span class="es">Recursos gratuitos</span><span class="en">Free resources</span></a>
+      <a class="btn btn-line" href="mailto:carlos@carlosruizbrito.com">carlos@carlosruizbrito.com</a>
+    </div>
+    <small>© 2026 Carlos Alberto Ruiz Brito · Delivery con Charly Brito. <span class="es">Las opiniones y recursos son personales; no representan a empleadores, clientes ni fabricantes.</span><span class="en">Opinions and resources are personal and do not represent employers, clients or vendors.</span></small>
+  </div>
+</footer>
+<script src="../js/inicio.js" defer></script>
+</body>
+</html>
