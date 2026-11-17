@@ -84,7 +84,7 @@ a{color:var(--accent);text-underline-offset:3px}
 .btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
 .facts{margin:48px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 32px;color:#b9b1d9;font-size:.95rem;list-style:none}
 .facts b{color:#fff;font-weight:600}
-@media (max-width:700px){.hero{padding:48px 0 64px}.who img{width:72px;height:72px;border-radius:16px}.who{margin-bottom:28px}}
+@media (max-width:700px){.who .autor{display:none}.hero{padding:44px 0 56px}.who img{width:72px;height:72px;border-radius:16px}.who{margin-bottom:28px}}
 /* Punto de vista */
 .pov{background:var(--surface);border-bottom:1px solid var(--line);padding:72px 0}
 .pov-t{margin:0;max-width:24em;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.2;letter-spacing:-.03em;font-weight:700;color:var(--fg);border-left:4px solid var(--accent);padding-left:28px}
@@ -184,13 +184,15 @@ details[open] summary::before{content:"−"}
 /* Quién soy */
 .about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start}
 .bio p{margin:0 0 16px;font-size:1.1rem;line-height:1.65;max-width:34em}
-.bio .cvrow{margin-top:26px}
+.bio .cvrow{margin-top:26px;align-items:center;gap:12px 20px}
+.pdfs{color:var(--muted);font-size:.95rem}.pdfs a{font-weight:600}
 .keys{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 24px}
 .keys div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
 .keys div:first-child{border-top:0}
 .keys dt{color:var(--muted);font-size:.9rem}
 .keys dd{margin:0;font-size:.97rem}
 h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
+@media (max-width:700px){.keys .dup{display:none}.keys div.dup+div{border-top:0}}
 @media (max-width:900px){.about{grid-template-columns:1fr;gap:32px}.keys div{grid-template-columns:1fr;gap:2px}}
 
 /* Trayectoria */
@@ -252,7 +254,7 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
 <section class="hero" aria-labelledby="titulo">
   <div class="col">
     <div class="copy">
-      <div class="who"><img src="{R}foto-carlos.jpg" alt="Carlos Alberto Ruiz Brito" width="88" height="88"><div><b><span class="es">Carlos Alberto «Charly» Ruiz Brito</span><span class="en">Carlos Alberto “Charly” Ruiz Brito</span></b><span>Senior Delivery Manager · <span class="es">autor de Delivery con Charly Brito</span><span class="en">author of Delivery con Charly Brito</span></span></div></div>
+      <div class="who"><img src="{R}foto-carlos.jpg" alt="Carlos Alberto Ruiz Brito" width="88" height="88"><div><b><span class="es">Carlos Alberto «Charly» Ruiz Brito</span><span class="en">Carlos Alberto “Charly” Ruiz Brito</span></b><span>Senior Delivery Manager<span class="autor"> · <span class="es">autor de Delivery con Charly Brito</span><span class="en">author of Delivery con Charly Brito</span></span></span></div></div>
       <h1 id="titulo"><span class="es">Hice crecer una cuenta de USD&nbsp;3.4M a USD&nbsp;12M.</span><span class="en">I grew an account from USD&nbsp;3.4M to USD&nbsp;12M.</span></h1>
       <p class="lede"><span class="es">Detecté que la infraestructura del cliente necesitaba renovarse, propuse cómo hacerlo y la cuenta pasó de 12 a 40 sitios. Aquí cuento cómo tomo ese tipo de decisiones.</span><span class="en">I saw that the client's infrastructure needed renewing, proposed how to do it, and the account grew from 12 to 40 sites. Here is how I make that kind of call.</span></p>
       <div class="actions">
@@ -282,19 +284,18 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
       <p><span class="es">Soy Senior Delivery Manager en Ciudad de México y llevo 15 años en TI. Empecé como analista de sistemas, pasé por banca y consultoría, y hoy dirijo un portafolio de infraestructura crítica y Disaster Recovery con más de 20 personas, en operación 24x7.</span><span class="en">I'm a Senior Delivery Manager based in Mexico City with 15 years in IT. I started as a systems analyst, worked in banking and consulting, and today I lead a critical infrastructure and Disaster Recovery portfolio with 20+ people, running 24x7.</span></p>
       <p><span class="es">Combino gobierno de entrega (alcance, presupuesto, riesgos y aceptación del cliente) con IA aplicada, siempre con revisión humana. Desde 2018 también doy clases de TI en la Universidad Insurgentes.</span><span class="en">I combine delivery governance (scope, budget, risk and client acceptance) with applied AI, always with human review. Since 2018 I have also taught IT at Universidad Insurgentes.</span></p>
       <div class="cvrow">
-          <a class="btn btn-dark" href="{R}cv.html"><span class="es">Ver CV completo</span><span class="en">View full CV</span></a>
-          <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf"><span class="es">Descargar PDF (ES)</span><span class="en">Download PDF (ES)</span></a>
-          <a class="btn btn-out" href="{R}recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf"><span class="es">Descargar PDF (EN)</span><span class="en">Download PDF (EN)</span></a>
-        </div>
+    <a class="btn btn-dark" href="{R}cv.html"><span class="es">Ver CV completo</span><span class="en">View full CV</span></a>
+    <span class="pdfs"><span class="es">Descargar PDF:</span><span class="en">Download PDF:</span> <a href="{R}recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf">ES</a> · <a href="{R}recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf">EN</a></span>
+  </div>
     </div>
     <dl class="keys">
-      <div><dt><span class="es">Hoy</span><span class="en">Now</span></dt><dd><span class="es">Senior Delivery Manager · infraestructura crítica y DR</span><span class="en">Senior Delivery Manager · critical infrastructure and DR</span></dd></div>
+      <div class="dup"><dt><span class="es">Hoy</span><span class="en">Now</span></dt><dd><span class="es">Senior Delivery Manager · infraestructura crítica y DR</span><span class="en">Senior Delivery Manager · critical infrastructure and DR</span></dd></div>
       <div><dt><span class="es">Experiencia en</span><span class="en">Experience with</span></dt><dd>Globant · Santander · Banorte · CitiBanamex · AB InBev</dd></div>
       <div><dt><span class="es">Sectores</span><span class="en">Industries</span></dt><dd><span class="es">Banca, retail, farma, automotriz, educación e industria</span><span class="en">Banking, retail, pharma, automotive, education and industry</span></dd></div>
       <div><dt><span class="es">Formación</span><span class="en">Education</span></dt><dd><span class="es">Maestría en Administración de Negocios (MBA) e Ingeniería en Sistemas Computacionales, UNITEC</span><span class="en">MBA and Computer Systems Engineering, UNITEC</span></dd></div>
       <div><dt><span class="es">Certificaciones</span><span class="en">Certifications</span></dt><dd>SAFe® 6 POPM · Certified ScrumMaster® · Management 3.0 · ITIL Foundations</dd></div>
       <div><dt><span class="es">Idiomas</span><span class="en">Languages</span></dt><dd><span class="es">Español nativo · inglés intermedio-profesional</span><span class="en">Spanish (native) · English (professional working)</span></dd></div>
-      <div><dt><span class="es">Base</span><span class="en">Based in</span></dt><dd><span class="es">Ciudad de México · equipos en 6 países</span><span class="en">Mexico City · teams in 6 countries</span></dd></div>
+      <div class="dup"><dt><span class="es">Base</span><span class="en">Based in</span></dt><dd><span class="es">Ciudad de México · equipos en 6 países</span><span class="en">Mexico City · teams in 6 countries</span></dd></div>
     </dl>
   </div>
   <h3 class="sub"><span class="es">Trayectoria</span><span class="en">Career</span></h3>
@@ -351,7 +352,7 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
   </article>
 
   <article class="story">
-    <div class="big">0 <span class="es">días</span><span class="en">days</span><small><span class="es">de retraso en la fecha comprometida</span><span class="en">of delay on the committed date</span></small></div>
+    <div class="big"><span class="es">En fecha</span><span class="en">On time</span><small><span class="es">entregado completo en la fecha comprometida</span><span class="en">delivered in full on the committed date</span></small></div>
     <div>
       <h3><span class="es">El clima frenó una entrega que dependía de imágenes satelitales</span><span class="en">The weather stalled a delivery that depended on satellite imagery</span></h3>
       <p class="hook"><span class="es">A días de la entrega, el clima impedía obtener imágenes satelitales útiles para el procesamiento en GeoMedia.</span><span class="en">Days before delivery, the weather prevented usable satellite imagery for the GeoMedia processing.</span></p>

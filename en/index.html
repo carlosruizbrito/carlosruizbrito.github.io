@@ -85,7 +85,7 @@ a{color:var(--accent);text-underline-offset:3px}
 .btn-line{border:1px solid rgba(255,255,255,.4);color:#fff}
 .facts{margin:48px 0 0;padding:20px 0 0;border-top:1px solid rgba(255,255,255,.16);display:flex;flex-wrap:wrap;gap:8px 32px;color:#b9b1d9;font-size:.95rem;list-style:none}
 .facts b{color:#fff;font-weight:600}
-@media (max-width:700px){.hero{padding:48px 0 64px}.who img{width:72px;height:72px;border-radius:16px}.who{margin-bottom:28px}}
+@media (max-width:700px){.who .autor{display:none}.hero{padding:44px 0 56px}.who img{width:72px;height:72px;border-radius:16px}.who{margin-bottom:28px}}
 /* Punto de vista */
 .pov{background:var(--surface);border-bottom:1px solid var(--line);padding:72px 0}
 .pov-t{margin:0;max-width:24em;font-size:clamp(1.6rem,3.6vw,2.6rem);line-height:1.2;letter-spacing:-.03em;font-weight:700;color:var(--fg);border-left:4px solid var(--accent);padding-left:28px}
@@ -185,13 +185,15 @@ details[open] summary::before{content:"−"}
 /* Quién soy */
 .about{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:48px;align-items:start}
 .bio p{margin:0 0 16px;font-size:1.1rem;line-height:1.65;max-width:34em}
-.bio .cvrow{margin-top:26px}
+.bio .cvrow{margin-top:26px;align-items:center;gap:12px 20px}
+.pdfs{color:var(--muted);font-size:.95rem}.pdfs a{font-weight:600}
 .keys{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 24px}
 .keys div{display:grid;grid-template-columns:130px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid var(--line)}
 .keys div:first-child{border-top:0}
 .keys dt{color:var(--muted);font-size:.9rem}
 .keys dd{margin:0;font-size:.97rem}
 h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
+@media (max-width:700px){.keys .dup{display:none}.keys div.dup+div{border-top:0}}
 @media (max-width:900px){.about{grid-template-columns:1fr;gap:32px}.keys div{grid-template-columns:1fr;gap:2px}}
 
 /* Trayectoria */
@@ -251,7 +253,7 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
 <section aria-labelledby="titulo" class="hero">
 <div class="col">
 <div class="copy">
-<div class="who"><img alt="Carlos Alberto Ruiz Brito" height="88" src="../foto-carlos.jpg" width="88"/><div><b>Carlos Alberto “Charly” Ruiz Brito</b><span>Senior Delivery Manager · author of Delivery con Charly Brito</span></div></div>
+<div class="who"><img alt="Carlos Alberto Ruiz Brito" height="88" src="../foto-carlos.jpg" width="88"/><div><b>Carlos Alberto “Charly” Ruiz Brito</b><span>Senior Delivery Manager<span class="autor"> · author of Delivery con Charly Brito</span></span></div></div>
 <h1 id="titulo">I grew an account from USD 3.4M to USD 12M.</h1>
 <p class="lede">I saw that the client's infrastructure needed renewing, proposed how to do it, and the account grew from 12 to 40 sites. Here is how I make that kind of call.</p>
 <div class="actions">
@@ -280,18 +282,17 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
 <p>I combine delivery governance (scope, budget, risk and client acceptance) with applied AI, always with human review. Since 2018 I have also taught IT at Universidad Insurgentes.</p>
 <div class="cvrow">
 <a class="btn btn-dark" href="../cv.html">View full CV</a>
-<a class="btn btn-out" href="../recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf">Download PDF (ES)</a>
-<a class="btn btn-out" href="../recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf">Download PDF (EN)</a>
+<span class="pdfs">Download PDF: <a href="../recursos/CV_Carlos_Ruiz_Brito_ES_WEB.pdf">ES</a> · <a href="../recursos/CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf">EN</a></span>
 </div>
 </div>
 <dl class="keys">
-<div><dt>Now</dt><dd>Senior Delivery Manager · critical infrastructure and DR</dd></div>
+<div class="dup"><dt>Now</dt><dd>Senior Delivery Manager · critical infrastructure and DR</dd></div>
 <div><dt>Experience with</dt><dd>Globant · Santander · Banorte · CitiBanamex · AB InBev</dd></div>
 <div><dt>Industries</dt><dd>Banking, retail, pharma, automotive, education and industry</dd></div>
 <div><dt>Education</dt><dd>MBA and Computer Systems Engineering, UNITEC</dd></div>
 <div><dt>Certifications</dt><dd>SAFe® 6 POPM · Certified ScrumMaster® · Management 3.0 · ITIL Foundations</dd></div>
 <div><dt>Languages</dt><dd>Spanish (native) · English (professional working)</dd></div>
-<div><dt>Based in</dt><dd>Mexico City · teams in 6 countries</dd></div>
+<div class="dup"><dt>Based in</dt><dd>Mexico City · teams in 6 countries</dd></div>
 </dl>
 </div>
 <h3 class="sub">Career</h3>
@@ -344,7 +345,7 @@ h3.sub{margin:64px 0 28px;font-size:1.3rem;letter-spacing:-.02em}
 </div>
 </article>
 <article class="story">
-<div class="big">0 days<small>of delay on the committed date</small></div>
+<div class="big">On time<small>delivered in full on the committed date</small></div>
 <div>
 <h3>The weather stalled a delivery that depended on satellite imagery</h3>
 <p class="hook">Days before delivery, the weather prevented usable satellite imagery for the GeoMedia processing.</p>
