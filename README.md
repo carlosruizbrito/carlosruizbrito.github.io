@@ -8,27 +8,32 @@ Sitio personal de **Carlos Alberto Ruiz Brito**, Senior Delivery Manager: Delive
 
 ```
 /
-├── index.html            Inicio bilingüe (ES/EN): perfil, trayectoria, casos, LinkedIn, recursos
+├── index.html            Inicio en español (generado desde _fuente/inicio.html)
+├── en/index.html         Inicio en inglés (generado desde la misma fuente)
+├── _fuente/              Fuente del inicio y generador (Jekyll no la publica)
+│   ├── inicio.html       Plantilla bilingüe con clases .es / .en
+│   └── build.py          python3 _fuente/build.py ""  → genera index.html y en/index.html
 ├── cv.html               CV web bilingüe con descargas PDF (noindex)
 ├── 404.html              Página de error con accesos a Inicio, Recursos y CV
-├── css/sitio.css         Estilos compartidos
-├── js/                   Scripts del sitio (sin scripts inline, compatibles con la CSP)
-│   ├── arranque.js       Idioma inicial (único script sin defer, en <head>)
-│   ├── nav.js            Navegación y selector de idioma
-│   ├── hero.js · inicio.js
+├── css/sitio.css         Estilos de las páginas internas (mismo diseño editorial del inicio)
+├── js/
+│   ├── idioma.js         Recuerda el idioma entre páginas y lleva a /en/ desde páginas en inglés
+│   ├── nav.js            Menú móvil
 │   ├── cv.js · catalogo.js · tablero.js
 ├── recursos/
 │   ├── index.html        Catálogo de recursos con filtros por tema
-│   ├── recursos.js       Lista de recursos: el inicio y el catálogo se dibujan solos
+│   ├── recursos.js       Lista de recursos: el catálogo se dibuja solo
 │   ├── tablero-ejecutivo.html  Página del Tablero Ejecutivo de Delivery
 │   ├── Tablero_Ejecutivo_Delivery_v1.1.xlsx · Executive_Delivery_Dashboard_v1.1.xlsx
 │   ├── tablero-*.jpg · tablero-como-usarlo*.mp4   Miniaturas, vista previa, pósters y videos
 │   ├── CV_Carlos_Ruiz_Brito_ES_WEB.pdf · CV_Carlos_Ruiz_Brito_EN_WEB_1.pdf
 │   └── og-image.png      Imagen para vista previa en redes
 ├── foto-carlos.jpg · favicon.ico · favicon.png · apple-touch-icon.png
-├── robots.txt · sitemap.xml
+├── robots.txt · sitemap.xml (con hreflang ES/EN)
 └── CNAME                 Dominio personalizado (carlosruizbrito.com)
 ```
+
+Para cambiar textos del inicio: editar `_fuente/inicio.html` (cada texto con su versión `.es` y `.en`) y correr `python3 _fuente/build.py ""`. No editar `index.html` ni `en/index.html` a mano.
 
 Las rutas públicas (`recursos/…`, CV en PDF, `tablero-ejecutivo.html`) están enlazadas desde LinkedIn y documentos compartidos. **No se renombran ni se mueven.**
 
@@ -63,4 +68,4 @@ Ver [LICENSE.md](LICENSE.md).
 #DeliveryConCharlyBrito
 
 ---
-Documento elaborado por Carlos Alberto Ruiz Brito · 11/10/2026 · actualizado 17/11/2026
+Documento elaborado por Carlos Alberto Ruiz Brito · 11/10/2026 · actualizado 17/11/2026 (diseño editorial)

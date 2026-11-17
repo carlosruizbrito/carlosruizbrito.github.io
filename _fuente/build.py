@@ -30,7 +30,8 @@ for lang, p in PAGINAS.items():
     html = src
     for k, v in {"{LANG}": lang, "{TITLE}": p["TITLE"], "{DESC}": p["DESC"], "{CANON}": p["CANON"],
                  "{URL_ES}": url_es, "{URL_EN}": url_en, "{R}": p["R"], "{OTHER}": p["OTHER"],
-                 "{OTHER_LANG}": p["OTHER_LANG"]}.items():
+                 "{OTHER_LANG}": p["OTHER_LANG"],
+                 "{ROBOTS}": "" if not base else '<meta name="robots" content="noindex, nofollow">\n'}.items():
         html = html.replace(k, v)
     html = html.replace('aria-label="Abrir menú"', 'aria-label="%s"' % p["MENU"])
     soup = BeautifulSoup(html, "html.parser")
